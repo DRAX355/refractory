@@ -1,0 +1,244 @@
+2026-10-01 11:31:48.855 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 11:31:48.857 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 11:31:48.857 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 11:31:48.857 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 11:31:48.858 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 11:31:48.858 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 11:31:48.858 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 11:39:22.453 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 11:39:22.457 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 11:39:22.457 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 11:39:22.457 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 11:39:22.457 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 11:39:22.458 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 11:39:22.458 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 11:42:33.072 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 11:42:33.073 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 11:42:33.073 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 11:42:33.073 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 11:42:33.074 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 11:42:33.074 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 11:42:33.074 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 11:42:48.673 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.
+2026-10-01 11:42:52.390 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 11:42:52.390 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 11:42:52.391 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 11:42:52.391 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 11:42:52.395 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 11:42:52.395 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 11:42:52.395 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 11:51:43.431 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell (1).pdf
+2026-10-01 11:51:43.446 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=f08fd4c2-5d0a-4e30-8791-d18ace712f91, file=input drawing _ naked shell (1).pdf
+2026-10-01 11:51:43.457 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\f08fd4c2-5d0a-4e30-8791-d18ace712f91\input drawing _ naked shell (1).pdf (6078 bytes)
+2026-10-01 11:51:43.506 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell (1).pdf'
+2026-10-01 11:51:43.509 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell (1).pdf
+2026-10-01 11:51:43.556 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:105 — Loading PDF: data\outputs\f08fd4c2-5d0a-4e30-8791-d18ace712f91\input drawing _ naked shell (1).pdf (poppler_path=C:\poppler\poppler-26.09.0\Library\bin)
+2026-10-01 11:51:51.749 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:119 —   Page 1: shape=(9356, 6617, 3)
+2026-10-01 11:51:51.781 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell (1).pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-01 11:51:51.783 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=f08fd4c2-5d0a-4e30-8791-d18ace712f91, format=DrawingFormat.PDF, pages=1
+2026-10-01 11:51:51.784 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=f08fd4c2-5d0a-4e30-8791-d18ace712f91, format=DrawingFormat.PDF, pages=1
+2026-10-01 11:51:51.785 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:82 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-01 11:51:52.505 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:120 — [PDF-Paths] Found 816 path segments
+2026-10-01 11:51:52.519 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:147 — [PDF-Paths] Profile extracted: 180 pts, height=293.1mm, max_r=153.1mm
+2026-10-01 11:51:52.520 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:87 — [Part 2] PDF path profile: 180 pts, h=293mm
+2026-10-01 11:51:52.520 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:100 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-01 11:51:52.521 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-01 11:52:08.497 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-01 11:52:09.085 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6617x9356
+2026-10-01 11:52:09.263 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:104 — [Part 2] DINO detection failed: 
+2026-10-01 11:52:09.311 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:109 — [Part 2] Step 2 — Tesseract OCR extraction…
+2026-10-01 11:52:09.315 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 6617x9356, scaling by 1.0x for OCR
+2026-10-01 11:52:09.744 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:113 — [Part 2] OCR failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 61908652 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-01 11:52:09.798 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:119 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-01 11:52:09.874 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-01 11:52:09.876 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-01 11:52:09.876 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:140 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-01 11:52:09.876 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-01 11:52:09.941 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-01 11:52:09.943 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:147 — [Part 2] Positioned dims: 0
+2026-10-01 11:52:09.943 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:154 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-01 11:52:10.297 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:165 — [Part 2] OpenCV failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 7768358 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-01 11:52:10.310 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-01 11:52:10.314 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:253 — [Assembler] Profile from PDF paths: 5 segments
+2026-10-01 11:52:10.315 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:680 — [Assembler] Nozzles: 0
+2026-10-01 11:52:10.315 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.31, segments=5, method=pdf_paths
+2026-10-01 11:52:10.323 | INFO     | app.services.part2_extraction.extraction_service:_save_output:223 — [Part 2] Output saved: data\outputs\f08fd4c2-5d0a-4e30-8791-d18ace712f91\vessel_geometry.json
+2026-10-01 11:52:10.323 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:185 — [Part 2] Extraction complete — job_id=f08fd4c2-5d0a-4e30-8791-d18ace712f91, elapsed=18.54s, confidence=0.31, segments=5, method=pdf_paths
+2026-10-01 11:55:45.755 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.
+2026-10-01 11:55:50.207 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 11:55:50.207 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 11:55:50.208 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 11:55:50.208 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 11:55:50.208 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 11:55:50.208 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 11:55:50.209 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 12:16:20.188 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 12:16:20.190 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 12:16:20.190 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 12:16:20.191 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 12:16:20.191 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 12:16:20.191 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 12:16:20.192 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 12:18:55.319 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell (1).pdf
+2026-10-01 12:18:55.336 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=bb62a5f2-6805-4e19-af71-0d95598e846d, file=input drawing _ naked shell (1).pdf
+2026-10-01 12:18:55.344 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\bb62a5f2-6805-4e19-af71-0d95598e846d\input drawing _ naked shell (1).pdf (6078 bytes)
+2026-10-01 12:18:55.347 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell (1).pdf'
+2026-10-01 12:18:55.347 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell (1).pdf
+2026-10-01 12:18:55.380 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:105 — Loading PDF: data\outputs\bb62a5f2-6805-4e19-af71-0d95598e846d\input drawing _ naked shell (1).pdf (poppler_path=C:\poppler\poppler-26.09.0\Library\bin)
+2026-10-01 12:18:59.430 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:119 —   Page 1: shape=(9356, 6617, 3)
+2026-10-01 12:18:59.453 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell (1).pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-01 12:18:59.453 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=bb62a5f2-6805-4e19-af71-0d95598e846d, format=DrawingFormat.PDF, pages=1
+2026-10-01 12:18:59.453 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=bb62a5f2-6805-4e19-af71-0d95598e846d, format=DrawingFormat.PDF, pages=1
+2026-10-01 12:18:59.453 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:82 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-01 12:18:59.821 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:120 — [PDF-Paths] Found 816 path segments
+2026-10-01 12:18:59.847 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:147 — [PDF-Paths] Profile extracted: 197 pts, height=316.3mm, max_r=146.9mm
+2026-10-01 12:18:59.847 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:87 — [Part 2] PDF path profile: 197 pts, h=316mm
+2026-10-01 12:18:59.847 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:100 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-01 12:18:59.847 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-01 12:19:11.238 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-01 12:19:11.578 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6617x9356
+2026-10-01 12:19:47.304 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.342 at [1453,2414,5870,6356]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.374 at [1072,2352,5904,6399]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.299 at [1637,2410,2455,2577]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.252 at [1456,2411,5881,6355]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,47,6570,9293]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3582,2425,3887,2564]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4362,4989,4826,5186]
+2026-10-01 12:19:47.317 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.259 at [1055,2340,5911,6416]
+2026-10-01 12:19:47.317 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-01 12:19:47.331 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:109 — [Part 2] Step 2 — Tesseract OCR extraction…
+2026-10-01 12:19:47.333 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 6617x9356, scaling by 1.0x for OCR
+2026-10-01 12:19:48.245 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-10-01 12:20:00.897 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 17 unique text lines extracted
+2026-10-01 12:20:04.164 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-10-01 12:20:07.759 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-10-01 12:20:07.946 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-10-01 12:20:10.874 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'port' — 8 lines extracted
+2026-10-01 12:20:27.035 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'front elevation view' — 9 lines extracted
+2026-10-01 12:20:27.390 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-10-01 12:20:27.615 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'arrow annotation' — 1 lines extracted
+2026-10-01 12:20:31.073 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'front elevation' — 9 lines extracted
+2026-10-01 12:20:31.078 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-01 12:20:31.079 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '929.8' → (929.8, 'mm')
+2026-10-01 12:20:31.079 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-01 12:20:31.079 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4884.35' → (4884.35, 'mm')
+2026-10-01 12:20:31.079 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '2415.7' → (2415.7, 'mm')
+2026-10-01 12:20:31.079 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '190' → (190.0, 'mm')
+2026-10-01 12:20:31.079 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-10-01 12:20:31.082 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '100' → (100.0, 'mm')
+2026-10-01 12:20:31.082 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '229.8' → (229.8, 'mm')
+2026-10-01 12:20:31.082 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4384.5' → (4384.5, 'mm')
+2026-10-01 12:20:31.082 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '2415./'
+2026-10-01 12:20:31.082 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10' → (10.0, 'mm')
+2026-10-01 12:20:31.082 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'f'
+2026-10-01 12:20:31.082 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a'
+2026-10-01 12:20:31.082 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '.'
+2026-10-01 12:20:31.082 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1' → (1.0, 'mm')
+2026-10-01 12:20:31.082 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-01 12:20:31.082 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7'
+2026-10-01 12:20:31.086 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-01 12:20:31.086 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-10-01 12:20:31.086 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '='
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MU'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.7 4884.5 2415./'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'n ' Key'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'x'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: ')'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ -O |'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '_ A'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|e'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1969.2'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '='
+2026-10-01 12:20:31.087 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MU'
+2026-10-01 12:20:31.087 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-01 12:20:31.093 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7 150'
+2026-10-01 12:20:31.093 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-01 12:20:31.093 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Sf |'
+2026-10-01 12:20:31.093 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'x'
+2026-10-01 12:20:31.093 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-01 12:20:31.093 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ 0|'
+2026-10-01 12:20:31.094 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '__ ML'
+2026-10-01 12:20:31.094 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-01 12:20:31.094 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4384.5' → (4384.5, 'mm')
+2026-10-01 12:20:31.094 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '0!'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'ILUUUY'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1965.2 4884.3 2415.7'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'GS ' Key'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'iN'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ -Q |'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '__'
+2026-10-01 12:20:31.095 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Mo'
+2026-10-01 12:20:31.095 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:168 — [OCR] Complete — raw_lines=62, dimensions=13, vessel_type=unknown
+2026-10-01 12:20:31.137 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:119 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-01 12:20:31.242 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-01 12:20:31.246 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-01 12:20:31.246 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:140 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-01 12:20:31.246 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-01 12:20:31.295 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-01 12:20:31.295 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:147 — [Part 2] Positioned dims: 0
+2026-10-01 12:20:31.295 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:154 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-01 12:20:31.896 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 291 line segments
+2026-10-01 12:20:37.037 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:165 — [Part 2] OpenCV failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 61908652 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-01 12:20:37.081 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-01 12:20:37.117 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:140 — [Assembler] Outer dia: 10000.0mm ('10000')
+2026-10-01 12:20:37.119 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Inner dia: 4884.35mm ('4884.35')
+2026-10-01 12:20:37.119 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:154 — [Assembler] Total length: 229.8mm ('229.8')
+2026-10-01 12:20:37.128 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:253 — [Assembler] Profile from PDF paths: 16 segments
+2026-10-01 12:20:37.130 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:680 — [Assembler] Nozzles: 2
+2026-10-01 12:20:37.136 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.72, segments=16, method=pdf_paths
+2026-10-01 12:20:37.170 | INFO     | app.services.part2_extraction.extraction_service:_save_output:223 — [Part 2] Output saved: data\outputs\bb62a5f2-6805-4e19-af71-0d95598e846d\vessel_geometry.json
+2026-10-01 12:20:37.171 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:185 — [Part 2] Extraction complete — job_id=bb62a5f2-6805-4e19-af71-0d95598e846d, elapsed=97.72s, confidence=0.72, segments=16, method=pdf_paths
+2026-10-01 12:28:59.018 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.
+2026-10-01 12:29:01.866 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 12:29:01.867 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 12:29:01.868 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 12:29:01.868 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 12:29:01.868 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 12:29:01.868 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 12:29:01.868 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 12:32:43.014 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.
+2026-10-01 12:32:44.977 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 12:32:44.978 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 12:32:44.978 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 12:32:44.978 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 12:32:44.979 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 12:32:44.979 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 12:32:44.979 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 12:32:46.288 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 12:32:46.288 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 12:32:46.289 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 12:32:46.289 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 12:32:46.289 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 12:32:46.289 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 12:32:46.289 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 12:37:45.538 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.
+2026-10-01 12:37:47.239 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 12:37:47.242 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 12:37:47.242 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 12:37:47.242 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 12:37:47.244 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 12:37:47.244 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 12:37:47.245 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 12:37:48.523 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-01 12:37:48.524 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-01 12:37:48.524 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-01 12:37:48.524 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-01 12:37:48.525 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-01 12:37:48.525 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-01 12:37:48.525 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-01 13:52:24.175 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.

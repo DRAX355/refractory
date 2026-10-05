@@ -1,0 +1,808 @@
+2026-10-04 14:40:49.462 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 14:40:49.463 | INFO     | app.main:lifespan:35 — ============================================================
+2026-10-04 14:40:49.463 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-10-04 14:40:49.464 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-10-04 14:40:49.464 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-10-04 14:40:49.464 | INFO     | app.main:lifespan:39 — ============================================================
+2026-10-04 14:40:49.464 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 14:42:13.505 | INFO     | app.main:lifespan:42 — RefractoryAI API shutting down.
+2026-10-04 14:42:15.164 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 14:42:15.165 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 14:42:15.165 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 14:42:15.165 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 14:42:15.165 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 14:42:15.165 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 14:42:15.166 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 14:42:30.215 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell (1).pdf
+2026-10-04 14:42:30.215 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=46b2c06e-8273-4439-af94-8cd1ccd36a08, file=input drawing _ naked shell (1).pdf
+2026-10-04 14:42:30.219 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\46b2c06e-8273-4439-af94-8cd1ccd36a08\input drawing _ naked shell (1).pdf (6078 bytes)
+2026-10-04 14:42:30.237 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell (1).pdf'
+2026-10-04 14:42:30.237 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell (1).pdf
+2026-10-04 14:42:30.245 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:105 — Loading PDF: data\outputs\46b2c06e-8273-4439-af94-8cd1ccd36a08\input drawing _ naked shell (1).pdf (poppler_path=C:\poppler\poppler-26.09.0\Library\bin)
+2026-10-04 14:42:38.574 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:119 —   Page 1: shape=(9356, 6617, 3)
+2026-10-04 14:42:38.590 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell (1).pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-04 14:42:38.590 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=46b2c06e-8273-4439-af94-8cd1ccd36a08, format=DrawingFormat.PDF, pages=1
+2026-10-04 14:42:38.590 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=46b2c06e-8273-4439-af94-8cd1ccd36a08, format=DrawingFormat.PDF, pages=1
+2026-10-04 14:42:38.590 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:104 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-04 14:42:39.124 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:120 — [PDF-Paths] Found 816 path segments
+2026-10-04 14:42:39.154 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:147 — [PDF-Paths] Profile extracted: 197 pts, height=316.3mm, max_r=146.0mm
+2026-10-04 14:42:39.155 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:109 — [Part 2] PDF path profile: 197 pts, h=316mm
+2026-10-04 14:42:39.156 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-04 14:42:39.156 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-04 14:42:50.458 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-04 14:42:50.734 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6617x9356
+2026-10-04 14:43:12.559 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.342 at [1453,2414,5870,6356]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.374 at [1072,2352,5904,6399]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.299 at [1637,2410,2455,2577]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.252 at [1456,2411,5881,6355]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,47,6570,9293]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3582,2425,3887,2564]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4362,4989,4826,5186]
+2026-10-04 14:43:12.567 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.259 at [1055,2340,5911,6416]
+2026-10-04 14:43:12.567 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-04 14:43:12.578 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:131 — [Part 2] Step 2 — Tesseract OCR extraction…
+2026-10-04 14:43:12.582 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 6617x9356, scaling by 1.0x for OCR
+2026-10-04 14:43:13.227 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-10-04 14:43:22.546 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 17 unique text lines extracted
+2026-10-04 14:43:24.763 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-10-04 14:43:27.180 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-10-04 14:43:27.342 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-10-04 14:43:29.456 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'port' — 8 lines extracted
+2026-10-04 14:43:41.253 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'front elevation view' — 9 lines extracted
+2026-10-04 14:43:41.456 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-10-04 14:43:41.572 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'arrow annotation' — 1 lines extracted
+2026-10-04 14:43:43.971 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'front elevation' — 9 lines extracted
+2026-10-04 14:43:43.973 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-04 14:43:43.973 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '929.8' → (929.8, 'mm')
+2026-10-04 14:43:43.973 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-04 14:43:43.973 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4884.35' → (4884.35, 'mm')
+2026-10-04 14:43:43.973 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '2415.7' → (2415.7, 'mm')
+2026-10-04 14:43:43.973 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '190' → (190.0, 'mm')
+2026-10-04 14:43:43.973 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-10-04 14:43:43.976 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '100' → (100.0, 'mm')
+2026-10-04 14:43:43.976 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '229.8' → (229.8, 'mm')
+2026-10-04 14:43:43.976 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4384.5' → (4384.5, 'mm')
+2026-10-04 14:43:43.976 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '2415./'
+2026-10-04 14:43:43.976 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10' → (10.0, 'mm')
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'f'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '.'
+2026-10-04 14:43:43.977 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1' → (1.0, 'mm')
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '='
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MU'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.7 4884.5 2415./'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'n ' Key'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'x'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: ')'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ -O |'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '_ A'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|e'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1969.2'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-04 14:43:43.977 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '='
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MU'
+2026-10-04 14:43:43.985 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7 150'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Sf |'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'x'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ 0|'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '__ ML'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 14:43:43.985 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4384.5' → (4384.5, 'mm')
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '0!'
+2026-10-04 14:43:43.985 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'ILUUUY'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1965.2 4884.3 2415.7'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'GS ' Key'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'iN'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ -Q |'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '__'
+2026-10-04 14:43:43.988 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Mo'
+2026-10-04 14:43:43.988 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:168 — [OCR] Complete — raw_lines=62, dimensions=13, vessel_type=unknown
+2026-10-04 14:43:44.020 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:141 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-04 14:43:44.080 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-04 14:43:44.081 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-04 14:43:44.081 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:162 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-04 14:43:44.081 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:166 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-04 14:43:44.124 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-04 14:43:44.124 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:169 — [Part 2] Positioned dims: 0
+2026-10-04 14:43:44.124 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:176 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-04 14:43:44.509 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 291 line segments
+2026-10-04 14:44:19.900 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 316 circles
+2026-10-04 14:44:20.005 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-04 14:44:20.005 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.1378 px/mm
+2026-10-04 14:44:20.030 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:374 — [OpenCV-Zones] Found 1 breakpoints at rows: [1366]
+2026-10-04 14:44:20.031 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:418 — [OpenCV-Zones] Assembled 2 zones from 1 breakpoints
+2026-10-04 14:44:20.032 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 2 vessel zones from profile contour
+2026-10-04 14:44:20.032 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-04 14:44:20.038 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-04 14:44:20.046 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:149 — [Assembler] Outer dia: 10000.0mm ('10000')
+2026-10-04 14:44:20.047 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:163 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-04 14:44:20.047 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:169 — [Assembler] OpenCV circle dia estimate: 31988.0mm
+2026-10-04 14:44:20.050 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:257 — [Assembler] Profile from PDF paths: 8 segments
+2026-10-04 14:44:20.051 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:693 — [Assembler] Nozzles: 2
+2026-10-04 14:44:20.052 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.62, segments=8, method=pdf_paths
+2026-10-04 14:44:20.064 | INFO     | app.services.part2_extraction.extraction_service:_save_output:245 — [Part 2] Output saved: data\outputs\46b2c06e-8273-4439-af94-8cd1ccd36a08\vessel_geometry.json
+2026-10-04 14:44:20.064 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:207 — [Part 2] Extraction complete — job_id=46b2c06e-8273-4439-af94-8cd1ccd36a08, elapsed=101.47s, confidence=0.62, segments=8, method=pdf_paths
+2026-10-04 14:50:48.199 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-04 14:50:56.234 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 14:50:56.234 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 14:50:56.234 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 14:50:56.235 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 14:50:56.235 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 14:50:56.235 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 14:50:56.235 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 14:50:58.014 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 14:50:58.014 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 14:50:58.015 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 14:50:58.015 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 14:50:58.015 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 14:50:58.015 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 14:50:58.016 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 14:55:56.738 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-04 14:55:58.363 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 14:55:58.363 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 14:55:58.363 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 14:55:58.363 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 14:55:58.363 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 14:55:58.363 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 14:55:58.365 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 14:55:59.534 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 14:55:59.534 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 14:55:59.534 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 14:55:59.534 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 14:55:59.534 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 14:55:59.534 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 14:55:59.534 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 14:57:09.422 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell (1).pdf
+2026-10-04 14:57:09.424 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=eb38001c-ca73-4cb5-a390-8fce893e4722, file=input drawing _ naked shell (1).pdf
+2026-10-04 14:57:09.426 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\eb38001c-ca73-4cb5-a390-8fce893e4722\input drawing _ naked shell (1).pdf (6078 bytes)
+2026-10-04 14:57:09.431 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell (1).pdf'
+2026-10-04 14:57:09.434 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell (1).pdf
+2026-10-04 14:57:09.448 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:105 — Loading PDF: data\outputs\eb38001c-ca73-4cb5-a390-8fce893e4722\input drawing _ naked shell (1).pdf (poppler_path=C:\poppler\poppler-26.09.0\Library\bin)
+2026-10-04 14:57:12.879 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:119 —   Page 1: shape=(9356, 6617, 3)
+2026-10-04 14:57:12.897 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell (1).pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-04 14:57:12.897 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=eb38001c-ca73-4cb5-a390-8fce893e4722, format=DrawingFormat.PDF, pages=1
+2026-10-04 14:57:12.897 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=eb38001c-ca73-4cb5-a390-8fce893e4722, format=DrawingFormat.PDF, pages=1
+2026-10-04 14:57:12.899 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:104 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-04 14:57:12.899 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:108 — [Part 2] Running exact Recon pipeline for PDF...
+2026-10-04 14:57:14.552 | INFO     | app.services.part2_extraction.recon.pdf_reader:read_pdf_scene:80 — [PDF-Reader] Extracted 214 geometric primitives.
+2026-10-04 14:57:14.633 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:37 — Building 3D mesh with 64 segments per revolution...
+2026-10-04 14:57:14.649 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:121 — Mesh built successfully: 1860 vertices, 3840 faces.
+2026-10-04 14:57:14.653 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:125 — Mesh exported to data\outputs\eb38001c-ca73-4cb5-a390-8fce893e4722\mesh.glb
+2026-10-04 14:57:14.688 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:120 — [PDF-Paths] Found 816 path segments
+2026-10-04 14:57:14.719 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:147 — [PDF-Paths] Profile extracted: 197 pts, height=316.3mm, max_r=146.0mm
+2026-10-04 14:57:14.720 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:131 — [Part 2] PDF path profile: 197 pts, h=316mm
+2026-10-04 14:57:14.720 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-04 14:57:14.720 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-04 14:57:25.162 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-04 14:57:25.410 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6617x9356
+2026-10-04 14:57:46.984 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.342 at [1453,2414,5870,6356]
+2026-10-04 14:57:46.993 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.374 at [1072,2352,5904,6399]
+2026-10-04 14:57:46.993 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.299 at [1637,2410,2455,2577]
+2026-10-04 14:57:46.993 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.252 at [1456,2411,5881,6355]
+2026-10-04 14:57:46.993 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,47,6570,9293]
+2026-10-04 14:57:46.995 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3582,2425,3887,2564]
+2026-10-04 14:57:46.995 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4362,4989,4826,5186]
+2026-10-04 14:57:46.995 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.259 at [1055,2340,5911,6416]
+2026-10-04 14:57:46.995 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-04 14:57:47.006 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:153 — [Part 2] Step 2 — Tesseract OCR extraction…
+2026-10-04 14:57:47.008 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 6617x9356, scaling by 1.0x for OCR
+2026-10-04 14:57:47.615 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-10-04 14:57:56.714 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 17 unique text lines extracted
+2026-10-04 14:57:58.923 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-10-04 14:58:01.329 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-10-04 14:58:01.475 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-10-04 14:58:03.558 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'port' — 8 lines extracted
+2026-10-04 14:58:09.584 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:157 — [Part 2] OCR failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 241368460 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-04 14:58:09.820 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:163 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-04 14:58:09.894 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-04 14:58:09.894 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-04 14:58:09.894 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:184 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-04 14:58:09.894 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:188 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-04 14:58:09.948 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-04 14:58:09.948 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:191 — [Part 2] Positioned dims: 0
+2026-10-04 14:58:09.948 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:198 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-04 14:58:10.364 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 291 line segments
+2026-10-04 14:58:13.457 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] OpenCV failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 61908652 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-04 14:58:13.469 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-04 14:58:13.494 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:257 — [Assembler] Profile from PDF paths: 8 segments
+2026-10-04 14:58:13.495 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:693 — [Assembler] Nozzles: 2
+2026-10-04 14:58:13.497 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.31, segments=8, method=pdf_paths
+2026-10-04 14:58:13.514 | INFO     | app.services.part2_extraction.extraction_service:_save_output:268 — [Part 2] Output saved: data\outputs\eb38001c-ca73-4cb5-a390-8fce893e4722\vessel_geometry.json
+2026-10-04 14:58:13.971 | INFO     | app.services.part2_extraction.extraction_service:_save_output:314 — [Part 2] Excel output saved: data\outputs\eb38001c-ca73-4cb5-a390-8fce893e4722\vessel_geometry.xlsx
+2026-10-04 14:58:13.971 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:229 — [Part 2] Extraction complete — job_id=eb38001c-ca73-4cb5-a390-8fce893e4722, elapsed=61.08s, confidence=0.31, segments=8, method=pdf_paths
+2026-10-04 15:04:22.106 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-04 15:04:26.714 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 15:04:26.714 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 15:04:26.714 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 15:04:26.714 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 15:04:26.714 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 15:04:26.714 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 15:04:26.714 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 15:12:45.213 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.dwg
+2026-10-04 15:12:45.214 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=d2fe9097-9c04-4c84-8618-542592e66d06, file=input drawing _ naked shell.dwg
+2026-10-04 15:12:45.223 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\d2fe9097-9c04-4c84-8618-542592e66d06\input drawing _ naked shell.dwg (46572 bytes)
+2026-10-04 15:12:45.230 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.dwg'
+2026-10-04 15:12:45.231 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.DWG for file: input drawing _ naked shell.dwg
+2026-10-04 15:12:45.273 | WARNING  | app.services.part1_ingestion.file_handler:_load_dwg:181 — ODA File Converter not found. DWG → DXF conversion skipped. Please install from https://www.opendesign.com/guestfiles/oda_file_converter
+2026-10-04 15:12:45.281 | ERROR    | app.api.v1.routes_extraction:process_drawing:81 — Ingestion error
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python311\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 360
+               │     └ 3
+               └ <function _main at 0x000001FBE1AEE020>
+  File "C:\Program Files\Python311\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 360
+           │    └ <function BaseProcess._bootstrap at 0x000001FBE17C3920>
+           └ <SpawnProcess name='SpawnProcess-7' parent=13620 started>
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001FBE17C2E80>
+    └ <SpawnProcess name='SpawnProcess-7' parent=13620 started>
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001FBE1AC1A10>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-7' parent=13620 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-7' parent=13620 started>
+    │    └ <function subprocess_started at 0x000001FBE3EBDD00>
+    └ <SpawnProcess name='SpawnProcess-7' parent=13620 started>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=472, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001FBE3F15C90>>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=472, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x000001FBE3EBCAE0>
+           │       │   └ <uvicorn.server.Server object at 0x000001FBE3F15C90>
+           │       └ <function run at 0x000001FBE3730860>
+           └ <module 'asyncio' from 'C:\\Program Files\\Python311\\Lib\\asyncio\\__init__.py'>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001FBE3EE55D0>
+           │      └ <function Runner.run at 0x000001FBE3734A40>
+           └ <asyncio.runners.Runner object at 0x000001FBE3F15C50>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\server.py...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001FBE3732660>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001FBE3F15C50>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001FBE37325C0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001FBE3734400>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001FBE3676840>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001FBE3F45690>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001FBFF...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001FBE4107050>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001FBE3F45690>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001FBFF...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001FBFF...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001FBE40FC890>
+          └ <fastapi.applications.FastAPI object at 0x000001FBE4107050>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001FBFFA89D00>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000001FBFF6E4E90>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001FBE40FC890>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '46791', 'sec-ch-ua-platform': '"Windows"', ...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001FBFFA89D00>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x000001FBE60FDB20>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001FBFF6E4E90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000001FBFF6E4E90...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001FBFFA96590>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001FBFF6E4E90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000001FBFF6E4E90...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001FBFFB2AED0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x000001FBFEB34A90>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001FBFFA96590>
+          └ <function wrap_app_handling_exceptions at 0x000001FBE604AE80>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001FBFFA8A700>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x000001FBFEB34A90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001FBFFA8A700>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001FBFEB34A90>>
+          └ <fastapi.routing.APIRouter object at 0x000001FBFEB34A90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001FBFFA8A700>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x000001FBE606C540>
+          └ APIRoute(path='/api/v1/extraction/process', name='process_drawing', methods=['POST'])
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001FBFFA8A700>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x000001FBFFAF80E0>
+          └ APIRoute(path='/api/v1/extraction/process', name='process_drawing', methods=['POST'])
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001FBFFA8A700>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001FBFFB2AE10>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001FBFFA89580>
+          └ <function wrap_app_handling_exceptions at 0x000001FBE604AE80>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001FBFFAF8680>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001F...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001FBFFA89580>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001FBFFB2AE10>
+                     └ <function get_request_handler.<locals>.app at 0x000001FBFFAF8040>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001FBE606C040>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'file': UploadFile(filename='input drawing _ naked shell.dwg', size=46572, headers=Headers({'content-disposition': 'form-dat...
+                 │         └ <function process_drawing at 0x000001FBFEB2D800>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+> File "D:\ZeroZeta\refractoryAI\app\api\v1\routes_extraction.py", line 71, in process_drawing
+    ingestion_result = await ingest_drawing(
+                             └ <function ingest_drawing at 0x000001FBFEB16FC0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part1_ingestion\ingestion_service.py", line 99, in ingest_drawing
+    images, fmt = load_drawing(file_path)
+                  │            └ WindowsPath('data/outputs/d2fe9097-9c04-4c84-8618-542592e66d06/input drawing _ naked shell.dwg')
+                  └ <function load_drawing at 0x000001FBFE64F4C0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part1_ingestion\file_handler.py", line 77, in load_drawing
+    images = _load_dwg(path)
+             │         └ WindowsPath('data/outputs/d2fe9097-9c04-4c84-8618-542592e66d06/input drawing _ naked shell.dwg')
+             └ <function _load_dwg at 0x000001FBFEB16DE0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part1_ingestion\file_handler.py", line 185, in _load_dwg
+    raise RuntimeError(
+
+RuntimeError: DWG format requires ODA File Converter. See README for installation instructions.
+2026-10-04 15:14:25.234 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-04 15:14:27.144 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 15:14:27.144 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 15:14:27.144 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 15:14:27.146 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 15:14:27.146 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 15:14:27.146 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 15:14:27.146 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 15:17:10.190 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.dwg
+2026-10-04 15:17:10.190 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=c12b965a-3252-4aa0-90d9-764fe5555cf4, file=input drawing _ naked shell.dwg
+2026-10-04 15:17:10.193 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\c12b965a-3252-4aa0-90d9-764fe5555cf4\input drawing _ naked shell.dwg (46572 bytes)
+2026-10-04 15:17:10.193 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.dwg'
+2026-10-04 15:17:10.197 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.DWG for file: input drawing _ naked shell.dwg
+2026-10-04 15:17:10.225 | WARNING  | app.services.part1_ingestion.file_handler:_load_dwg:181 — ODA File Converter not found. DWG → DXF conversion skipped. Please install from https://www.opendesign.com/guestfiles/oda_file_converter
+2026-10-04 15:17:10.225 | ERROR    | app.api.v1.routes_extraction:process_drawing:81 — Ingestion error
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python311\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 344
+               │     └ 3
+               └ <function _main at 0x000002352049E020>
+  File "C:\Program Files\Python311\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 344
+           │    └ <function BaseProcess._bootstrap at 0x0000023520173920>
+           └ <SpawnProcess name='SpawnProcess-8' parent=13620 started>
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x0000023520172E80>
+    └ <SpawnProcess name='SpawnProcess-8' parent=13620 started>
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x0000023520471A10>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-8' parent=13620 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-8' parent=13620 started>
+    │    └ <function subprocess_started at 0x00000235228BDD00>
+    └ <SpawnProcess name='SpawnProcess-8' parent=13620 started>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=892, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x0000023522915E50>>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=892, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x00000235228BCAE0>
+           │       │   └ <uvicorn.server.Server object at 0x0000023522915E50>
+           │       └ <function run at 0x0000023522170860>
+           └ <module 'asyncio' from 'C:\\Program Files\\Python311\\Lib\\asyncio\\__init__.py'>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x00000235228E55D0>
+           │      └ <function Runner.run at 0x0000023522174A40>
+           └ <asyncio.runners.Runner object at 0x0000023522917B10>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\server.py...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000023522172660>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000023522917B10>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000235221725C0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000023522174400>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000023520A96840>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000235229425D0>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023544...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x00000235228E0050>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000235229425D0>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023544...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023544...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000023543E70410>
+          └ <fastapi.applications.FastAPI object at 0x00000235228E0050>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000023544495A80>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000002354352BA50>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000023543E70410>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '46791', 'sec-ch-ua-platform': '"Windows"', ...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000023544495A80>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x0000023524AFDB20>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000002354352BA50>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000002354352BA50...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000023543529690>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000002354352BA50>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000002354352BA50...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x00000235445F0150>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x00000235444BF7D0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000023543529690>
+          └ <function wrap_app_handling_exceptions at 0x0000023524A4AE80>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000235445DBB00>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x00000235444BF7D0>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000235445DBB00>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x00000235444BF7D0>>
+          └ <fastapi.routing.APIRouter object at 0x00000235444BF7D0>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000235445DBB00>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x0000023524A6C540>
+          └ APIRoute(path='/api/v1/extraction/process', name='process_drawing', methods=['POST'])
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000235445DBB00>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x00000235444FC360>
+          └ APIRoute(path='/api/v1/extraction/process', name='process_drawing', methods=['POST'])
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000235445DBB00>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x00000235445F0250>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x00000235445DBC40>
+          └ <function wrap_app_handling_exceptions at 0x0000023524A4AE80>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000235445DBD80>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x00000235445DBC40>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x00000235445F0250>
+                     └ <function get_request_handler.<locals>.app at 0x00000235444FC400>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000023524A6C040>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'file': UploadFile(filename='input drawing _ naked shell.dwg', size=46572, headers=Headers({'content-disposition': 'form-dat...
+                 │         └ <function process_drawing at 0x000002354352D8A0>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+> File "D:\ZeroZeta\refractoryAI\app\api\v1\routes_extraction.py", line 71, in process_drawing
+    ingestion_result = await ingest_drawing(
+                             └ <function ingest_drawing at 0x0000023543516FC0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part1_ingestion\ingestion_service.py", line 99, in ingest_drawing
+    images, fmt = load_drawing(file_path)
+                  │            └ WindowsPath('data/outputs/c12b965a-3252-4aa0-90d9-764fe5555cf4/input drawing _ naked shell.dwg')
+                  └ <function load_drawing at 0x000002354304B4C0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part1_ingestion\file_handler.py", line 77, in load_drawing
+    images = _load_dwg(path)
+             │         └ WindowsPath('data/outputs/c12b965a-3252-4aa0-90d9-764fe5555cf4/input drawing _ naked shell.dwg')
+             └ <function _load_dwg at 0x0000023543516DE0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part1_ingestion\file_handler.py", line 185, in _load_dwg
+    raise RuntimeError(
+
+RuntimeError: DWG format requires ODA File Converter. See README for installation instructions.
+2026-10-04 15:19:25.824 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-04 15:19:28.170 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-04 15:19:28.170 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-04 15:19:28.170 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-04 15:19:28.170 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-04 15:19:28.170 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-04 15:19:28.173 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-04 15:19:28.173 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-04 15:20:01.192 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.dxf
+2026-10-04 15:20:01.194 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=d82f5e0e-d833-4269-8754-37d98f1f88c3, file=input drawing _ naked shell.dxf
+2026-10-04 15:20:01.197 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\d82f5e0e-d833-4269-8754-37d98f1f88c3\input drawing _ naked shell.dxf (251291 bytes)
+2026-10-04 15:20:01.219 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.dxf'
+2026-10-04 15:20:01.220 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.DXF for file: input drawing _ naked shell.dxf
+2026-10-04 15:20:03.045 | DEBUG    | app.services.part1_ingestion.file_handler:_load_dxf:143 — Loading DXF: data\outputs\d82f5e0e-d833-4269-8754-37d98f1f88c3\input drawing _ naked shell.dxf
+2026-10-04 15:20:03.484 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.dxf' — format=DrawingFormat.DXF, pages=1
+2026-10-04 15:20:03.485 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=d82f5e0e-d833-4269-8754-37d98f1f88c3, format=DrawingFormat.DXF, pages=1
+2026-10-04 15:20:03.485 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=d82f5e0e-d833-4269-8754-37d98f1f88c3, format=DrawingFormat.DXF, pages=1
+2026-10-04 15:20:03.485 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:63 — [Part 2] Step 0a — Direct DXF entity extraction…
+2026-10-04 15:20:03.485 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:67 — [Part 2] Running exact Recon pipeline...
+2026-10-04 15:20:04.814 | INFO     | app.services.part2_extraction.recon.dxf_reader:read_dxf_scene:119 — [DXF] 216 entities → 194 prims, 0 dims, 2 texts, 1.0 mm/unit
+2026-10-04 15:20:04.925 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:37 — Building 3D mesh with 64 segments per revolution...
+2026-10-04 15:20:04.937 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:121 — Mesh built successfully: 1604 vertices, 3328 faces.
+2026-10-04 15:20:04.939 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:125 — Mesh exported to data\outputs\d82f5e0e-d833-4269-8754-37d98f1f88c3\mesh.glb
+2026-10-04 15:20:05.231 | INFO     | app.services.part2_extraction.dxf_geometry_extractor:extract_dxf_profile:240 — [DXF] Profile extracted: 200 points, height=263.7mm, max_r=159.2mm
+2026-10-04 15:20:05.245 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:90 — [Part 2] DXF profile: 200 pts, h=264mm
+2026-10-04 15:20:05.245 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:124 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-04 15:20:05.245 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-04 15:20:15.683 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-04 15:20:15.696 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 902x750
+2026-10-04 15:20:33.794 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.332 at [138,129,815,667]
+2026-10-04 15:20:33.800 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.376 at [134,65,818,674]
+2026-10-04 15:20:33.800 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'block' — conf=0.256 at [233,66,275,86]
+2026-10-04 15:20:33.800 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 3 elements found (threshold=0.25)
+2026-10-04 15:20:33.806 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:133 — [Part 2] Step 2 — Tesseract OCR extraction…
+2026-10-04 15:20:33.808 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 902x750, scaling by 3.0x for OCR
+2026-10-04 15:20:33.992 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-10-04 15:20:34.827 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 16 unique text lines extracted
+2026-10-04 15:20:34.998 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 7 lines extracted
+2026-10-04 15:20:35.177 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 2 lines extracted
+2026-10-04 15:20:35.302 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'block' — 1 lines extracted
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '$20.8... 1963.2 SRI,'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '«a'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '['
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '=:'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Sr-—.'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'I'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'fe SS'
+2026-10-04 15:20:35.302 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-04 15:20:35.302 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '529.8' → (529.8, 'mm')
+2026-10-04 15:20:35.302 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-04 15:20:35.302 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-04 15:20:35.302 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '2415.7' → (2415.7, 'mm')
+2026-10-04 15:20:35.302 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'y'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'j'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'I'
+2026-10-04 15:20:35.302 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '= |. ~ aS'
+2026-10-04 15:20:35.313 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 15:20:35.313 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 15:20:35.313 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 15:20:35.313 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'C —_'
+2026-10-04 15:20:35.314 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 15:20:35.314 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '528%, 2.'
+2026-10-04 15:20:35.314 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:168 — [OCR] Complete — raw_lines=26, dimensions=6, vessel_type=unknown
+2026-10-04 15:20:35.317 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:178 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-04 15:20:35.335 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 27 line segments
+2026-10-04 15:20:35.433 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 332 circles
+2026-10-04 15:20:35.442 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 1 significant contours
+2026-10-04 15:20:35.442 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0874 px/mm
+2026-10-04 15:20:35.456 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:374 — [OpenCV-Zones] Found 1 breakpoints at rows: [706]
+2026-10-04 15:20:35.457 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:418 — [OpenCV-Zones] Assembled 2 zones from 1 breakpoints
+2026-10-04 15:20:35.457 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 2 vessel zones from profile contour
+2026-10-04 15:20:35.458 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-04 15:20:35.458 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-04 15:20:35.460 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:149 — [Assembler] Outer dia: 4884.3mm ('4884.3')
+2026-10-04 15:20:35.461 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:163 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-04 15:20:35.461 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:169 — [Assembler] OpenCV circle dia estimate: 5698.0mm
+2026-10-04 15:20:35.465 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:237 — [Assembler] Profile from DXF: 6 segments
+2026-10-04 15:20:35.465 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:693 — [Assembler] Nozzles: 2
+2026-10-04 15:20:35.467 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.57, segments=6, method=dxf_direct
+2026-10-04 15:20:35.476 | INFO     | app.services.part2_extraction.extraction_service:_save_output:248 — [Part 2] Output saved: data\outputs\d82f5e0e-d833-4269-8754-37d98f1f88c3\vessel_geometry.json
+2026-10-04 15:20:35.863 | INFO     | app.services.part2_extraction.extraction_service:_save_output:294 — [Part 2] Excel output saved: data\outputs\d82f5e0e-d833-4269-8754-37d98f1f88c3\vessel_geometry.xlsx
+2026-10-04 15:20:35.863 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] Extraction complete — job_id=d82f5e0e-d833-4269-8754-37d98f1f88c3, elapsed=32.38s, confidence=0.57, segments=6, method=dxf_direct
+2026-10-04 20:12:54.181 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.dxf
+2026-10-04 20:12:54.201 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=22c94386-3030-4edc-819f-d118d1ef3a61, file=input drawing _ naked shell.dxf
+2026-10-04 20:12:54.214 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\22c94386-3030-4edc-819f-d118d1ef3a61\input drawing _ naked shell.dxf (251291 bytes)
+2026-10-04 20:12:54.232 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.dxf'
+2026-10-04 20:12:54.234 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.DXF for file: input drawing _ naked shell.dxf
+2026-10-04 20:12:54.250 | DEBUG    | app.services.part1_ingestion.file_handler:_load_dxf:143 — Loading DXF: data\outputs\22c94386-3030-4edc-819f-d118d1ef3a61\input drawing _ naked shell.dxf
+2026-10-04 20:12:54.797 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.dxf' — format=DrawingFormat.DXF, pages=1
+2026-10-04 20:12:54.800 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=22c94386-3030-4edc-819f-d118d1ef3a61, format=DrawingFormat.DXF, pages=1
+2026-10-04 20:12:54.802 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=22c94386-3030-4edc-819f-d118d1ef3a61, format=DrawingFormat.DXF, pages=1
+2026-10-04 20:12:54.802 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:63 — [Part 2] Step 0a — Direct DXF entity extraction…
+2026-10-04 20:12:54.803 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:67 — [Part 2] Running exact Recon pipeline...
+2026-10-04 20:12:54.850 | INFO     | app.services.part2_extraction.recon.dxf_reader:read_dxf_scene:119 — [DXF] 216 entities → 194 prims, 0 dims, 2 texts, 1.0 mm/unit
+2026-10-04 20:12:55.024 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:37 — Building 3D mesh with 64 segments per revolution...
+2026-10-04 20:12:55.072 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:121 — Mesh built successfully: 1604 vertices, 3328 faces.
+2026-10-04 20:12:55.121 | INFO     | app.services.part2_extraction.recon.mesh_builder:build_mesh:125 — Mesh exported to data\outputs\22c94386-3030-4edc-819f-d118d1ef3a61\mesh.glb
+2026-10-04 20:12:55.456 | INFO     | app.services.part2_extraction.dxf_geometry_extractor:extract_dxf_profile:240 — [DXF] Profile extracted: 200 points, height=263.7mm, max_r=159.2mm
+2026-10-04 20:12:55.464 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:90 — [Part 2] DXF profile: 200 pts, h=264mm
+2026-10-04 20:12:55.464 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:124 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-04 20:12:55.478 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 902x750
+2026-10-04 20:13:14.001 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.332 at [138,129,815,667]
+2026-10-04 20:13:14.008 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.376 at [134,65,818,674]
+2026-10-04 20:13:14.008 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'block' — conf=0.256 at [233,66,275,86]
+2026-10-04 20:13:14.008 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 3 elements found (threshold=0.25)
+2026-10-04 20:13:14.013 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:133 — [Part 2] Step 2 — Tesseract OCR extraction…
+2026-10-04 20:13:14.017 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 902x750, scaling by 3.0x for OCR
+2026-10-04 20:13:14.140 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-10-04 20:13:14.986 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 16 unique text lines extracted
+2026-10-04 20:13:15.156 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 7 lines extracted
+2026-10-04 20:13:15.341 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 2 lines extracted
+2026-10-04 20:13:15.460 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'block' — 1 lines extracted
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '$20.8... 1963.2 SRI,'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '«a'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '['
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '=:'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Sr-—.'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'I'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'fe SS'
+2026-10-04 20:13:15.462 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-04 20:13:15.462 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '529.8' → (529.8, 'mm')
+2026-10-04 20:13:15.462 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-04 20:13:15.462 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-04 20:13:15.462 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '2415.7' → (2415.7, 'mm')
+2026-10-04 20:13:15.462 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'y'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'j'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'I'
+2026-10-04 20:13:15.462 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '= |. ~ aS'
+2026-10-04 20:13:15.468 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 20:13:15.468 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 20:13:15.468 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 20:13:15.468 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'C —_'
+2026-10-04 20:13:15.468 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-10-04 20:13:15.468 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '528%, 2.'
+2026-10-04 20:13:15.468 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:168 — [OCR] Complete — raw_lines=26, dimensions=6, vessel_type=unknown
+2026-10-04 20:13:15.468 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:178 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-04 20:13:15.488 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 27 line segments
+2026-10-04 20:13:15.579 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 332 circles
+2026-10-04 20:13:15.584 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 1 significant contours
+2026-10-04 20:13:15.585 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0874 px/mm
+2026-10-04 20:13:15.599 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:374 — [OpenCV-Zones] Found 1 breakpoints at rows: [706]
+2026-10-04 20:13:15.599 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:418 — [OpenCV-Zones] Assembled 2 zones from 1 breakpoints
+2026-10-04 20:13:15.600 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 2 vessel zones from profile contour
+2026-10-04 20:13:15.601 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-04 20:13:15.601 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-04 20:13:15.605 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:149 — [Assembler] Outer dia: 4884.3mm ('4884.3')
+2026-10-04 20:13:15.606 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:163 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-04 20:13:15.606 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:169 — [Assembler] OpenCV circle dia estimate: 5698.0mm
+2026-10-04 20:13:15.609 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:237 — [Assembler] Profile from DXF: 6 segments
+2026-10-04 20:13:15.611 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:693 — [Assembler] Nozzles: 2
+2026-10-04 20:13:15.611 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.57, segments=6, method=dxf_direct
+2026-10-04 20:13:15.622 | INFO     | app.services.part2_extraction.extraction_service:_save_output:248 — [Part 2] Output saved: data\outputs\22c94386-3030-4edc-819f-d118d1ef3a61\vessel_geometry.json
+2026-10-04 20:13:15.739 | INFO     | app.services.part2_extraction.extraction_service:_save_output:294 — [Part 2] Excel output saved: data\outputs\22c94386-3030-4edc-819f-d118d1ef3a61\vessel_geometry.xlsx
+2026-10-04 20:13:15.739 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] Extraction complete — job_id=22c94386-3030-4edc-819f-d118d1ef3a61, elapsed=20.94s, confidence=0.57, segments=6, method=dxf_direct

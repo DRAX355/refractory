@@ -1,0 +1,207 @@
+2026-09-29 09:56:24.602 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-09-29 09:56:24.606 | INFO     | app.main:lifespan:35 — ============================================================
+2026-09-29 09:56:24.608 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-09-29 09:56:24.610 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-09-29 09:56:24.617 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-09-29 09:56:24.619 | INFO     | app.main:lifespan:39 — ============================================================
+2026-09-29 09:56:24.621 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-09-29 10:01:51.953 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell (1).pdf
+2026-09-29 10:01:51.966 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=7235cef5-8853-4a90-8a08-84a21a673960, file=input drawing _ naked shell (1).pdf
+2026-09-29 10:01:51.978 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\7235cef5-8853-4a90-8a08-84a21a673960\input drawing _ naked shell (1).pdf (6078 bytes)
+2026-09-29 10:01:52.028 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell (1).pdf'
+2026-09-29 10:01:52.031 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell (1).pdf
+2026-09-29 10:01:52.089 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:105 — Loading PDF: data\outputs\7235cef5-8853-4a90-8a08-84a21a673960\input drawing _ naked shell (1).pdf (poppler_path=C:\poppler\poppler-26.09.0\Library\bin)
+2026-09-29 10:02:18.892 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:119 —   Page 1: shape=(9356, 6617, 3)
+2026-09-29 10:02:18.942 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell (1).pdf' — format=DrawingFormat.PDF, pages=1
+2026-09-29 10:02:18.946 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=7235cef5-8853-4a90-8a08-84a21a673960, format=DrawingFormat.PDF, pages=1
+2026-09-29 10:02:18.947 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:51 — [Part 2] Starting extraction — job_id=7235cef5-8853-4a90-8a08-84a21a673960, pages=1
+2026-09-29 10:02:18.948 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:67 — [Part 2] Step 1/3 — Running Grounding DINO detection...
+2026-09-29 10:02:18.948 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-09-29 10:03:06.087 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-09-29 10:03:08.029 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6617x9356
+2026-09-29 10:03:42.562 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.350 at [1044,2388,5926,6413]
+2026-09-29 10:03:42.569 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.329 at [1474,2368,5887,6386]
+2026-09-29 10:03:42.569 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.304 at [1635,2409,2431,2573]
+2026-09-29 10:03:42.570 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow' — conf=0.281 at [4374,4997,4823,5194]
+2026-09-29 10:03:42.571 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.288 at [1114,2308,5924,6365]
+2026-09-29 10:03:42.571 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 5 elements found (threshold=0.25)
+2026-09-29 10:03:42.615 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:76 — [Part 2] Step 2/3 — Running OCR extraction...
+2026-09-29 10:03:42.624 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 6617x9356, scaling by 1.0x for OCR
+2026-09-29 10:03:43.928 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-09-29 10:04:04.429 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 17 unique text lines extracted
+2026-09-29 10:04:09.083 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 9 lines extracted
+2026-09-29 10:04:13.629 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-09-29 10:04:14.006 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-09-29 10:04:14.306 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'arrow' — 1 lines extracted
+2026-09-29 10:04:19.201 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'front elevation view' — 12 lines extracted
+2026-09-29 10:04:19.205 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-09-29 10:04:19.206 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '929.8' → (929.8, 'mm')
+2026-09-29 10:04:19.206 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-09-29 10:04:19.207 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4884.35' → (4884.35, 'mm')
+2026-09-29 10:04:19.207 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '2415.7' → (2415.7, 'mm')
+2026-09-29 10:04:19.207 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '190' → (190.0, 'mm')
+2026-09-29 10:04:19.208 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-09-29 10:04:19.210 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '100' → (100.0, 'mm')
+2026-09-29 10:04:19.210 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '229.8' → (229.8, 'mm')
+2026-09-29 10:04:19.210 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4384.5' → (4384.5, 'mm')
+2026-09-29 10:04:19.210 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '2415./'
+2026-09-29 10:04:19.211 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10' → (10.0, 'mm')
+2026-09-29 10:04:19.211 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'f'
+2026-09-29 10:04:19.211 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a'
+2026-09-29 10:04:19.213 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '.'
+2026-09-29 10:04:19.213 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1' → (1.0, 'mm')
+2026-09-29 10:04:19.213 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-09-29 10:04:19.214 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.7 4884.5 2415./'
+2026-09-29 10:04:19.215 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-09-29 10:04:19.216 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a SZ ' Key'
+2026-09-29 10:04:19.216 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'SS |'
+2026-09-29 10:04:19.217 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'x'
+2026-09-29 10:04:19.217 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: ')'
+2026-09-29 10:04:19.218 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ -O |'
+2026-09-29 10:04:19.218 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '_ A'
+2026-09-29 10:04:19.219 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|e'
+2026-09-29 10:04:19.219 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7'
+2026-09-29 10:04:19.219 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-09-29 10:04:19.220 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-09-29 10:04:19.220 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-09-29 10:04:19.221 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-09-29 10:04:19.221 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-09-29 10:04:19.221 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '='
+2026-09-29 10:04:19.222 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MU'
+2026-09-29 10:04:19.223 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1960.2'
+2026-09-29 10:04:19.223 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '-Q |'
+2026-09-29 10:04:19.223 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'imerelele'
+2026-09-29 10:04:19.224 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1965.2 4304.35 2415./'
+2026-09-29 10:04:19.224 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-09-29 10:04:19.224 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'On |'
+2026-09-29 10:04:19.225 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO Key'
+2026-09-29 10:04:19.225 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'IN'
+2026-09-29 10:04:19.225 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'NO'
+2026-09-29 10:04:19.227 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-09-29 10:04:19.227 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-09-29 10:04:19.227 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-09-29 10:04:19.228 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '__ Me'
+2026-09-29 10:04:19.228 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MN'
+2026-09-29 10:04:19.229 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:168 — [OCR] Complete — raw_lines=48, dimensions=11, vessel_type=unknown
+2026-09-29 10:04:19.353 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:89 — [Part 2] Step 2b — PDF direct text extraction (pdfplumber)...
+2026-09-29 10:04:21.312 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:52 — [PDF-Text] Page 1: 0 words extracted
+2026-09-29 10:04:21.314 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:77 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-09-29 10:04:21.315 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:113 — [Part 2] pdfplumber found no text — PDF may be rasterised
+2026-09-29 10:04:21.316 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:118 — [Part 2] Step 3/3 — Running OpenCV geometry processing...
+2026-09-29 10:04:22.186 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:93 — [OpenCV] Detected 291 line segments
+2026-09-29 10:04:29.686 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:130 — [Part 2] OpenCV processing failed: OpenCV(5.0.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 61908652 bytes in function 'cv::OutOfMemoryError'
+
+2026-09-29 10:04:29.728 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:67 — [Assembler] Assembling VesselGeometry from extraction results...
+2026-09-29 10:04:29.752 | DEBUG    | app.services.part2_extraction.geometry_assembler:_resolve_vessel_type:120 — [Assembler] Vessel type → VesselType.BOF
+2026-09-29 10:04:29.770 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:159 — [Assembler] Outer diameter: 10000.0 mm (from '10000')
+2026-09-29 10:04:29.771 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:168 — [Assembler] Inner diameter: 4884.35 mm (from '4884.35')
+2026-09-29 10:04:29.772 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:175 — [Assembler] Total length: 10000.0 mm (from '10000')
+2026-09-29 10:04:29.777 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:215 — [Assembler] Nozzles assembled: 2
+2026-09-29 10:04:29.790 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:100 — [Assembler] Done — vessel_type=VesselType.BOF, confidence=0.64
+2026-09-29 10:04:29.828 | INFO     | app.services.part2_extraction.extraction_service:_save_output:176 — [Part 2] Output saved: data\outputs\7235cef5-8853-4a90-8a08-84a21a673960\vessel_geometry.json
+2026-09-29 10:04:29.831 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:148 — [Part 2] Extraction complete — job_id=7235cef5-8853-4a90-8a08-84a21a673960, elapsed=130.88s, confidence=0.64
+2026-09-29 10:56:26.613 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-09-29 10:56:26.615 | INFO     | app.main:lifespan:35 — ============================================================
+2026-09-29 10:56:26.615 | INFO     | app.main:lifespan:36 —   RefractoryAI API  v0.1.0
+2026-09-29 10:56:26.615 | INFO     | app.main:lifespan:37 —   Environment: development
+2026-09-29 10:56:26.615 | INFO     | app.main:lifespan:38 —   Device: cpu
+2026-09-29 10:56:26.616 | INFO     | app.main:lifespan:39 — ============================================================
+2026-09-29 10:56:26.616 | INFO     | app.main:lifespan:40 — Warming up Grounding DINO model on first request (lazy load)...
+2026-09-29 10:59:56.741 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell (1).pdf
+2026-09-29 10:59:56.745 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=2dcd8511-e5b0-4f14-bb4e-313dae5a44b7, file=input drawing _ naked shell (1).pdf
+2026-09-29 10:59:56.752 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\2dcd8511-e5b0-4f14-bb4e-313dae5a44b7\input drawing _ naked shell (1).pdf (6078 bytes)
+2026-09-29 10:59:56.791 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell (1).pdf'
+2026-09-29 10:59:56.792 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell (1).pdf
+2026-09-29 10:59:56.811 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:105 — Loading PDF: data\outputs\2dcd8511-e5b0-4f14-bb4e-313dae5a44b7\input drawing _ naked shell (1).pdf (poppler_path=C:\poppler\poppler-26.09.0\Library\bin)
+2026-09-29 11:00:01.156 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:119 —   Page 1: shape=(9356, 6617, 3)
+2026-09-29 11:00:01.231 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell (1).pdf' — format=DrawingFormat.PDF, pages=1
+2026-09-29 11:00:01.232 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=2dcd8511-e5b0-4f14-bb4e-313dae5a44b7, format=DrawingFormat.PDF, pages=1
+2026-09-29 11:00:01.233 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:51 — [Part 2] Starting extraction — job_id=2dcd8511-e5b0-4f14-bb4e-313dae5a44b7, pages=1
+2026-09-29 11:00:01.233 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:67 — [Part 2] Step 1/3 — Running Grounding DINO detection...
+2026-09-29 11:00:01.234 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-09-29 11:00:42.623 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-09-29 11:00:43.989 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6617x9356
+2026-09-29 11:01:20.465 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.350 at [1044,2388,5926,6413]
+2026-09-29 11:01:20.471 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.329 at [1474,2368,5887,6386]
+2026-09-29 11:01:20.471 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.304 at [1635,2409,2431,2573]
+2026-09-29 11:01:20.472 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow' — conf=0.281 at [4374,4997,4823,5194]
+2026-09-29 11:01:20.472 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.288 at [1114,2308,5924,6365]
+2026-09-29 11:01:20.472 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 5 elements found (threshold=0.25)
+2026-09-29 11:01:20.507 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:76 — [Part 2] Step 2/3 — Running OCR extraction...
+2026-09-29 11:01:20.521 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:114 — [OCR] Base image 6617x9356, scaling by 1.0x for OCR
+2026-09-29 11:01:21.882 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:119 — [OCR] Running Tesseract on full image...
+2026-09-29 11:01:31.004 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:143 — [OCR] Full image — 17 unique text lines extracted
+2026-09-29 11:01:33.977 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 9 lines extracted
+2026-09-29 11:01:36.390 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'oxygen lance port' — 8 lines extracted
+2026-09-29 11:01:36.618 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'title block' — 1 lines extracted
+2026-09-29 11:01:36.918 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'arrow' — 1 lines extracted
+2026-09-29 11:01:40.395 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:161 — [OCR] Region 'front elevation view' — 12 lines extracted
+2026-09-29 11:01:40.402 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-09-29 11:01:40.403 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '929.8' → (929.8, 'mm')
+2026-09-29 11:01:40.404 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-09-29 11:01:40.404 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4884.35' → (4884.35, 'mm')
+2026-09-29 11:01:40.404 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '2415.7' → (2415.7, 'mm')
+2026-09-29 11:01:40.404 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '190' → (190.0, 'mm')
+2026-09-29 11:01:40.405 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-09-29 11:01:40.406 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '100' → (100.0, 'mm')
+2026-09-29 11:01:40.406 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '229.8' → (229.8, 'mm')
+2026-09-29 11:01:40.406 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '4384.5' → (4384.5, 'mm')
+2026-09-29 11:01:40.406 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '2415./'
+2026-09-29 11:01:40.407 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '10' → (10.0, 'mm')
+2026-09-29 11:01:40.407 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'f'
+2026-09-29 11:01:40.407 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a'
+2026-09-29 11:01:40.408 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '.'
+2026-09-29 11:01:40.408 | DEBUG    | app.utils.unit_parser:parse_dimension:62 — Parsed plain number (assumed mm): '1' → (1.0, 'mm')
+2026-09-29 11:01:40.408 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\'
+2026-09-29 11:01:40.408 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.7 4884.5 2415./'
+2026-09-29 11:01:40.409 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-09-29 11:01:40.409 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'a SZ ' Key'
+2026-09-29 11:01:40.410 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'SS |'
+2026-09-29 11:01:40.410 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'x'
+2026-09-29 11:01:40.410 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: ')'
+2026-09-29 11:01:40.410 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ -O |'
+2026-09-29 11:01:40.410 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '_ A'
+2026-09-29 11:01:40.411 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|e'
+2026-09-29 11:01:40.411 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '529.8 1965.2 4884.3 2415.7'
+2026-09-29 11:01:40.411 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-09-29 11:01:40.411 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'Key'
+2026-09-29 11:01:40.411 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-09-29 11:01:40.411 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-09-29 11:01:40.412 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-09-29 11:01:40.412 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '='
+2026-09-29 11:01:40.412 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MU'
+2026-09-29 11:01:40.412 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1960.2'
+2026-09-29 11:01:40.412 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '-Q |'
+2026-09-29 11:01:40.412 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'imerelele'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '929.8 1965.2 4304.35 2415./'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '|'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'On |'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO Key'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'IN'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'NO'
+2026-09-29 11:01:40.413 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '| .'
+2026-09-29 11:01:40.414 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'CO'
+2026-09-29 11:01:40.414 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '\ } y'
+2026-09-29 11:01:40.414 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: '__ Me'
+2026-09-29 11:01:40.414 | WARNING  | app.utils.unit_parser:parse_dimension:67 — Could not parse dimension from: 'MN'
+2026-09-29 11:01:40.415 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:168 — [OCR] Complete — raw_lines=48, dimensions=11, vessel_type=unknown
+2026-09-29 11:01:40.491 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:89 — [Part 2] Step 2b — PDF direct text extraction (pdfplumber)...
+2026-09-29 11:01:41.706 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:52 — [PDF-Text] Page 1: 0 words extracted
+2026-09-29 11:01:41.706 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:77 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-09-29 11:01:41.707 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:113 — [Part 2] pdfplumber found no text — PDF may be rasterised
+2026-09-29 11:01:41.707 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:118 — [Part 2] Step 3/3 — Running OpenCV geometry processing...
+2026-09-29 11:01:42.122 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:93 — [OpenCV] Detected 291 line segments
+2026-09-29 11:02:23.141 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:97 — [OpenCV] Detected 316 circles
+2026-09-29 11:02:23.325 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:101 — [OpenCV] Detected 2 significant contours
+2026-09-29 11:02:23.326 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Scale estimated from bounding rect: 0.1378 px/mm
+2026-09-29 11:02:23.332 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:122 — [OpenCV] Geometry processing complete.
+2026-09-29 11:02:23.343 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:67 — [Assembler] Assembling VesselGeometry from extraction results...
+2026-09-29 11:02:23.382 | DEBUG    | app.services.part2_extraction.geometry_assembler:_resolve_vessel_type:120 — [Assembler] Vessel type → VesselType.BOF
+2026-09-29 11:02:23.395 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:159 — [Assembler] Outer diameter: 10000.0 mm (from '10000')
+2026-09-29 11:02:23.397 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:168 — [Assembler] Inner diameter: 4884.35 mm (from '4884.35')
+2026-09-29 11:02:23.397 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:175 — [Assembler] Total length: 10000.0 mm (from '10000')
+2026-09-29 11:02:23.397 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:181 — [Assembler] OpenCV cross-check — largest circle = 31988.0mm dia
+2026-09-29 11:02:23.400 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:215 — [Assembler] Nozzles assembled: 2
+2026-09-29 11:02:23.408 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:100 — [Assembler] Done — vessel_type=VesselType.BOF, confidence=0.64
+2026-09-29 11:02:23.474 | INFO     | app.services.part2_extraction.extraction_service:_save_output:176 — [Part 2] Output saved: data\outputs\2dcd8511-e5b0-4f14-bb4e-313dae5a44b7\vessel_geometry.json
+2026-09-29 11:02:23.475 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:148 — [Part 2] Extraction complete — job_id=2dcd8511-e5b0-4f14-bb4e-313dae5a44b7, elapsed=142.24s, confidence=0.64
