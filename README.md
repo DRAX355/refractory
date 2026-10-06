@@ -1,4 +1,4 @@
-﻿# AI-Driven Refractory Lining Design — RefractoryAI
+# AI-Driven Refractory Lining Design — RefractoryAI
 ## ZeroZeta | End-to-End Solution Architecture
 
 > **From Engineering Drawing to CAD Deliverables**
@@ -7,15 +7,14 @@
 
 ## Architecture Overview
 
-| Part | Module | Description | Status |
-|------|--------|-------------|--------|
-| **1** | `part1_ingestion` | Accept PDF/DWG/DXF/Image drawings | ✅ Done |
-| **2** | `part2_extraction` | DINO + OCR + OpenCV → VesselGeometry | ✅ Done |
-| 3 | `ai_assistant` | SmolLM2 + RAG (Local LLM) | 🔲 Pending |
-| 4 | `design_engine` | Refractory Engineering Rules Engine | 🔲 Pending |
-| 5 | `geometry_engine` | Parametric FreeCAD geometry | 🔲 Pending |
-| 6 | `cad_generation` | FreeCAD TechDraw + ezdxf export | 🔲 Pending |
-| 7 | `outputs` | GA/Section/Component drawings + BOM | 🔲 Pending |
+RefractoryAI is a full-stack system designed to automate the design of refractory linings for steelmaking vessels (such as BOF converters and Torpedo Ladles).
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| **Backend API** | FastAPI backend that processes PDF/DXF drawings, uses AI (litellm/Gemini) for OCR/Geometry extraction, and returns structured vessel data. | ✅ Done |
+| **Frontend UI** | Vanilla HTML/JS interactive 8-step wizard. Manages the lining design workflow (from drawing ingestion, geometry confirmation, zone splitting, to bill of materials). | ✅ Done |
+| **Geometry Rendering** | Fully dynamic SVG engine (`shellOnlySVG`, `sideSVG`) that reads directly from extracted data to render perfect parametric vessel diagrams. | ✅ Done |
+| **CAD Export** | Integration with FreeCAD/ezdxf for final engineering drawings. | 🔲 Pending |
 
 ---
 
@@ -24,64 +23,44 @@
 ```
 refractoryAI/
 ├── app/
-│   ├── main.py                                # FastAPI app entry point
-│   ├── api/v1/
-│   │   ├── routes_ingestion.py                # Part 1 REST API
-│   │   └── routes_extraction.py               # Part 2 REST API
-│   ├── core/
-│   │   ├── config.py                          # Settings (pydantic-settings)
-│   │   └── logging_config.py                  # Loguru structured logging
+│   ├── main.py                                # FastAPI app entry point (Backend)
+│   ├── api/v1/                                # API Routes
 │   ├── models/
-│   │   └── vessel_geometry.py                 # ★ CONTRACT MODEL (all parts use this)
+│   │   └── vessel_geometry.py                 # Core schema (VesselGeometry)
 │   ├── services/
-│   │   ├── part1_ingestion/
-│   │   │   ├── ingestion_service.py           # Part 1 orchestrator
-│   │   │   ├── file_handler.py                # Multi-format file loader
-│   │   │   └── drawing_validator.py           # File validation
-│   │   └── part2_extraction/
-│   │       ├── extraction_service.py          # Part 2 orchestrator
-│   │       ├── dino_detector.py               # Grounding DINO detection
-│   │       ├── ocr_extractor.py               # Tesseract OCR
-│   │       ├── opencv_processor.py            # OpenCV geometry
-│   │       └── geometry_assembler.py          # Fusion → VesselGeometry
-│   └── utils/
-│       ├── image_utils.py                     # Shared image helpers
-│       └── unit_parser.py                     # Dimension string parser
-├── tests/
-│   ├── test_part1_ingestion.py
-│   └── test_part2_extraction.py
+│   │   ├── part1_ingestion/                   # Multi-format file handling
+│   │   └── part2_extraction/                  # OCR, LLM-based parsing, Geometry assembly
+├── ui/
+│   └── index.html                             # The full Frontend App (HTML/JS/CSS)
 ├── data/
-│   ├── sample_drawings/                        # Put test drawings here
-│   └── outputs/                                # Extraction results (JSON)
+│   ├── sample_drawings/                       # Put test drawings here
+│   └── outputs/                               # Extraction results (JSON)
 ├── requirements.txt
 ├── pytest.ini
-└── .env.example
+└── .env
 ```
 
 ---
 
-## Prerequisites — Install These First
+## Prerequisites
 
-### 1. Tesseract OCR (required for Part 2 OCR)
-- **Windows**: https://github.com/UB-Mannheim/tesseract/wiki
-  - Install to `C:\Program Files\Tesseract-OCR\`
-  - Add to PATH
+Before running the backend, ensure you have the following installed:
 
-### 2. Poppler (required for PDF ingestion)
-- **Windows**: https://github.com/oschwartz10612/poppler-windows/releases/
-  - Extract to `C:\poppler\`
-  - Add `C:\poppler\Library\bin` to PATH
-
-### 3. ODA File Converter (required for DWG files — optional)
-- **Download**: https://www.opendesign.com/guestfiles/oda_file_converter
-- Only needed if you're working with DWG files
+1. **Python 3.10+**
+2. **Node.js** (optional, just for `http-server` if you want to run the UI quickly)
+3. **Tesseract OCR** (For local OCR processing)
+   - *Windows*: [Download here](https://github.com/UB-Mannheim/tesseract/wiki) (Install to `C:\Program Files\Tesseract-OCR\` and add to PATH)
+4. **Poppler** (For PDF to image conversion)
+   - *Windows*: [Download here](https://github.com/oschwartz10612/poppler-windows/releases/) (Extract to `C:\poppler\` and add `C:\poppler\Library\bin` to PATH)
 
 ---
 
-## Setup & Run
+## Setup & Run Instructions
+
+### 1. Backend Setup
 
 ```bash
-# 1. Create virtual environment
+# 1. Create and activate a virtual environment
 python -m venv venv
 venv\Scripts\activate          # Windows
 # source venv/bin/activate      # Linux/Mac
@@ -90,69 +69,46 @@ venv\Scripts\activate          # Windows
 pip install -r requirements.txt
 
 # 3. Configure environment
+# Ensure you have a .env file (copy from .env.example)
+# Add your GEMINI_API_KEY to the .env file!
 copy .env.example .env
-# Edit .env: set TESSERACT_CMD and POPPLER_PATH paths
 
-# 4. Run the API server
+# 4. Run the Backend API server
 uvicorn app.main:app --reload --port 8000
 ```
+*Backend API Documentation will be available at: http://localhost:8000/docs*
 
-API Documentation: http://localhost:8000/docs
+### 2. Frontend Setup
 
----
-
-## API Endpoints
-
-### Part 1 — Drawing Ingestion
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/v1/ingestion/upload` | Upload drawing (PDF/DXF/DWG/Image) |
-| `GET`  | `/api/v1/ingestion/{job_id}/status` | Check job status |
-
-### Part 2 — Drawing Intelligence
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/v1/extraction/process` | Upload + extract in one call |
-| `POST` | `/api/v1/extraction/process/{job_id}` | Re-run extraction on ingested job |
-| `GET`  | `/api/v1/extraction/{job_id}/result` | Get saved VesselGeometry JSON |
-
-### System
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET`  | `/health` | Health check |
-| `GET`  | `/docs` | Swagger UI |
-
----
-
-## Contract Model (for Parts 3–7)
-
-```python
-from app.models.vessel_geometry import VesselGeometry
-
-# VesselGeometry contains:
-# - shell: VesselShellGeometry (outer_diameter, inner_diameter, total_length...)
-# - nozzles: list[Nozzle]
-# - operating_conditions: OperatingConditions (vessel_capacity_tons, ...)
-# - vessel_type: VesselType (BOF, EAF, LADLE, ...)
-# - drawing_number, revision
-# - raw_ocr_texts: list[str]      ← useful for Part 3 RAG
-# - dino_detections: list[BoundingBox]
-# - extraction_confidence: float
-```
-
----
-
-## Running Tests
+The frontend is a lightweight vanilla JS/HTML file that expects to communicate with the backend on port 8000.
 
 ```bash
-pytest tests/ -v
+# Open a new terminal
+cd ui
+
+# Start a simple HTTP server (Port 3000)
+python -m http.server 3000
+# OR if using Node: npx http-server -p 3000
 ```
+*Access the Frontend Application at: http://localhost:3000*
 
 ---
 
-## For Other Team Members (Parts 3–7)
+## How to use the Pipeline
 
-1. Import the contract model: `from app.models.vessel_geometry import VesselGeometry`
-2. Call Part 2 API: `POST /api/v1/extraction/process` with a drawing file
-3. The JSON response contains the full `VesselGeometry` object
-4. Or load from disk: `data/outputs/{job_id}/vessel_geometry.json`
+1. **Open the Frontend**: Go to `http://localhost:3000`
+2. **Upload a Drawing**: In Step 0 (G0), click the upload area or the "Load sample shell drawing" button to upload a PDF (e.g., `pressure_vessel_profile.png` or a PDF drawing).
+3. **AI Extraction**: The frontend will automatically hit the `/api/v1/extraction/process` endpoint. The backend will parse the drawing using LLMs and OCR, extracting dimensions for the Bottom Dish, Lower Cone, Barrel, Top Cone, and Mouth.
+4. **Data-Driven UI**: The UI will automatically map the extracted dimensions based on their spatial arrangement.
+5. **Dynamic Geometry**: Step 1 (G1) will render a perfect 2D vector graphic of the vessel. If you manually alter any table values, the vector graphic will instantly re-render to reflect the new parametric shape.
+6. **Proceed Through Wizard**: Proceed to Step 3 to see the brick lining design overlay onto the automatically extracted shell geometry.
+
+---
+
+## For the Next Developer (Integration Handoff)
+
+- **UI Integration**: The entire frontend is encapsulated in `ui/index.html`. It maintains a global `S` state object.
+- **Data Mapping**: In `loadDrawing` (inside `ui/index.html`), the extraction response is smartly mapped by sorting the segments by `index` (bottom-to-top) rather than trusting LLM hallucinated labels. This guarantees that `hDish`, `hLC`, `hBar`, `hTop`, and `hMouth` are always assigned perfectly.
+- **SVG Rendering**: Look at `shellOnlySVG()` and `sideSVG()` to see how the geometry parameters (radii, heights, and spherical cap logic) dynamically translate into SVG paths.
+- **Backend API**: The core extraction logic resides in `app/services/part2_extraction/geometry_assembler.py`. It leverages LiteLLM (Gemini 1.5 Pro) to structure the OCR data. 
+- **Cleanup**: Testing scratchpads and irrelevant files have been stripped from this commit to ensure a clean codebase for immediate integration.

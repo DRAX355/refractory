@@ -1,0 +1,160 @@
+[
+  {
+    "record_id": "bof-180mt-ref-bottom",
+    "equipment_type": "BOF",
+    "capacity_mt": 180,
+    "zone_name": "Bottom",
+    "angular_extent_deg": 360,
+    "shell_geometry": {
+      "outer_dia_mm": 5942,
+      "zone_height_mm": 529.8,
+      "note": "Bottom dish detail sheet also shows R7450, dia 2280/437/490/2586.5/5131 — not yet mapped into this schema"
+    },
+    "boundary_conditions": {
+      "metal_level_mt": 180,
+      "specific_vol_m3_per_t": 0.934,
+      "skin_temp_limit_c": null,
+      "slag_freeboard_mm": null
+    },
+    "decision": {
+      "material_type": "Type-1",
+      "thickness_mm": 900,
+      "quality_grade_internal": "TRL HMR C2R",
+      "decision_source": "human",
+      "layer": "Working lining",
+      "position": "inner"
+    },
+    "secondary_layers": [
+      { "layer": "Safety lining (layer 1 & 2)", "material_type": "Type-5", "thickness_mm": 114, "quality_grade_internal": "TRL MC-4", "position": "outer" }
+    ],
+    "rationale_text": null,
+    "data_source": "180MT BOF BOM sheet 1 (Bottom zone rows, items 1 & 9)",
+    "reviewed_by_expert": true,
+    "date_added": "2026-10-03"
+  },
+  {
+    "record_id": "bof-180mt-ref-lower-cone",
+    "equipment_type": "BOF",
+    "capacity_mt": 180,
+    "zone_name": "Lower Cone",
+    "angular_extent_deg": 360,
+    "shell_geometry": {
+      "outer_dia_mm": null,
+      "zone_height_mm": 1965.2,
+      "note": "Transition zone between bottom (dia 5942) and barrel (dia 7570) is a curved taper, not a constant diameter. Belongs to the shell-geometry extraction step, not this decision record — out of scope here."
+    },
+    "boundary_conditions": {
+      "metal_level_mt": 180,
+      "specific_vol_m3_per_t": 0.934,
+      "skin_temp_limit_c": null,
+      "slag_freeboard_mm": null
+    },
+    "decision": {
+      "material_type": "Type-1",
+      "thickness_mm": 1000,
+      "quality_grade_internal": "TRL HMR C2R",
+      "decision_source": "human",
+      "layer": "Working lining (layers 8-16, marks 100/20 & 100/80)",
+      "position": "inner"
+    },
+    "secondary_layers": [
+      { "layer": "Working lining (layers 0-7, TSC marks)", "position": "inner", "decision_source": "human", "selection_basis": "brick_mark", "note": "Decision specified directly as brick marks (TSC-1A etc.), not as a thickness value — thickness isn't the unit this decision was made in" },
+      { "layer": "Safety lining", "quality_grade_internal": "TRL MC-4", "position": "outer", "decision_source": "human", "selection_basis": "brick_mark", "note": "Decision specified directly as brick marks (LC-1/LC-2), not as a thickness value" }
+    ],
+    "rationale_text": null,
+    "data_source": "180MT BOF BOM sheet 1 (Lower Cone zone, item 12)",
+    "reviewed_by_expert": true,
+    "date_added": "2026-10-03"
+  },
+  {
+    "record_id": "bof-180mt-ref-barrel-charge-pad",
+    "equipment_type": "BOF",
+    "capacity_mt": 180,
+    "zone_name": "Barrel — Charge Pad",
+    "angular_extent_deg": 90,
+    "shell_geometry": { "outer_dia_mm": 7570, "zone_height_mm": 4884.3 },
+    "boundary_conditions": { "metal_level_mt": 180, "specific_vol_m3_per_t": 0.934 },
+    "decision": {
+      "material_type": "Type-4",
+      "thickness_mm": 1000,
+      "quality_grade_internal": "TRL HMR C5R",
+      "decision_source": "human",
+      "layer": "Working lining (layers 19-63, marks 100/20 & 100/80)",
+      "position": "inner"
+    },
+    "rationale_text": null,
+    "data_source": "180MT BOF BOM sheet 1 (item 17), GA SECTION B-B",
+    "reviewed_by_expert": true,
+    "date_added": "2026-10-03"
+  },
+  {
+    "record_id": "bof-180mt-ref-barrel-trunnion-tap-pad",
+    "equipment_type": "BOF",
+    "capacity_mt": 180,
+    "zone_name": "Barrel — Trunnion & Tap Pad",
+    "angular_extent_deg": 270,
+    "shell_geometry": { "outer_dia_mm": 7570, "zone_height_mm": 4884.3 },
+    "boundary_conditions": { "metal_level_mt": 180, "specific_vol_m3_per_t": 0.934 },
+    "decision": {
+      "material_type": "Type-2",
+      "thickness_mm": 900,
+      "quality_grade_internal": "TRL HMR C3R",
+      "decision_source": "human",
+      "layer": "Working lining (layers 19-63, marks 90/8 & 90/80)",
+      "position": "inner"
+    },
+    "secondary_layers": [
+      { "layer": "Safety lining", "material_type": "Type-5", "thickness_mm": 150, "quality_grade_internal": "TRL MC-4", "position": "outer" }
+    ],
+    "rationale_text": null,
+    "data_source": "180MT BOF BOM sheet 1 (items 17 & 20), GA SECTION B-B",
+    "reviewed_by_expert": true,
+    "date_added": "2026-10-03"
+  },
+  {
+    "record_id": "bof-180mt-ref-top-cone-rest-area",
+    "equipment_type": "BOF",
+    "capacity_mt": 180,
+    "zone_name": "Top Cone — Rest Area",
+    "angular_extent_deg": 300,
+    "shell_geometry": {
+      "outer_dia_mm": 5200,
+      "zone_height_mm": 2415.7,
+      "note": "5200 is the mouth diameter per GA sheet; full taper profile not yet extracted"
+    },
+    "boundary_conditions": { "metal_level_mt": 180, "specific_vol_m3_per_t": 0.934 },
+    "decision": {
+      "material_type": "Type-3",
+      "thickness_mm": 800,
+      "quality_grade_internal": "TRL HMR C4",
+      "decision_source": "human",
+      "layer": "Working lining, layer 66 (steps down: 800 → 750 → 700 → 550 → 450mm across layers 66-87)",
+      "position": "inner"
+    },
+    "rationale_text": null,
+    "data_source": "180MT BOF BOM sheet 1 (items 21-28), GA SECTION D-D",
+    "reviewed_by_expert": true,
+    "date_added": "2026-10-03"
+  },
+  {
+    "record_id": "bof-180mt-ref-top-cone-tap-pad",
+    "equipment_type": "BOF",
+    "capacity_mt": 180,
+    "zone_name": "Top Cone — Tap Pad",
+    "angular_extent_deg": 60,
+    "shell_geometry": { "outer_dia_mm": 5200, "zone_height_mm": 2415.7 },
+    "boundary_conditions": { "metal_level_mt": 180, "specific_vol_m3_per_t": 0.934 },
+    "decision": {
+      "material_type": "Type-2",
+      "thickness_mm": 800,
+      "quality_grade_internal": "TRL HMR C3R",
+      "decision_source": "human",
+      "layer": "Working lining, layer 66 (steps down: 800 → 750 → 700mm across layers 66-68)",
+      "position": "inner"
+    },
+    "rationale_text": null,
+    "data_source": "180MT BOF BOM sheet 1 (items 21-23), GA SECTION D-D",
+    "reviewed_by_expert": true,
+    "date_added": "2026-10-03"
+  }
+]

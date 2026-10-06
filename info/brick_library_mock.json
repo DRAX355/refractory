@@ -1,0 +1,258 @@
+{
+  "_scope_note": "Mock brick library for the 180MT BOF reference case, built from real dimensions in the shared shape sheets. Stands in for the client's real brick library until delivered. Only marks with an unambiguous drawing label are included — see _known_gaps for what is intentionally excluded and why.",
+
+  "bricks": [
+    {
+      "mark": "SH-1", "zone": "Bottom", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "bottom_dish_wedge",
+      "dimensions_mm": { "overall_length": 900, "face_width_top": 142.4, "face_width_bottom": 159.6, "A": 113.6, "B": 68.7, "C": 127.2, "D": 77.0 },
+      "source": "Detail of Bottom Working Bricks, 180T BOF (shape table)"
+    },
+    {
+      "mark": "SH-2", "zone": "Bottom", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "bottom_dish_wedge",
+      "dimensions_mm": { "overall_length": 900, "face_width_top": 142.4, "face_width_bottom": 159.6, "A": 96.3, "B": 83.5, "C": 107.9, "D": 93.6 },
+      "source": "Detail of Bottom Working Bricks, 180T BOF (shape table)"
+    },
+    {
+      "mark": "SH-3", "zone": "Bottom", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "bottom_dish_wedge",
+      "dimensions_mm": { "overall_length": 900, "face_width_top": 142.4, "face_width_bottom": 159.6, "A": 104.8, "B": 92.5, "C": 117.4, "D": 103.8 },
+      "source": "Detail of Bottom Working Bricks, 180T BOF (shape table)"
+    },
+    {
+      "mark": "SH-4", "zone": "Bottom", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "bottom_dish_wedge",
+      "dimensions_mm": { "overall_length": 900, "face_width_top": 142.4, "face_width_bottom": 159.6, "A": 110.7, "B": 99.0, "C": 124.1, "D": 111.1 },
+      "source": "Detail of Bottom Working Bricks, 180T BOF (shape table)"
+    },
+    {
+      "mark": "SH-5", "zone": "Bottom", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "bottom_dish_wedge",
+      "dimensions_mm": { "overall_length": 900, "face_width_top": 142.4, "face_width_bottom": 159.6, "A": 105.3, "B": 99.0, "C": 118.0, "D": 110.91 },
+      "source": "Detail of Bottom Working Bricks, 180T BOF (shape table)"
+    },
+    {
+      "mark": "KEY", "zone": "Bottom", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "center_block",
+      "dimensions_mm": { "inner_dia": 437, "outer_dia": 490, "height": 900, "bolt_holes": "4x dia.12, 42mm deep, 240mm PCD, 45deg spacing" },
+      "note": "Single center block, qty 1 per BOQ. Two sheets shown the same block — one simplified, one with the hole detail; merged here as one mark.",
+      "source": "Detail of Bottom Working Bricks (KEY ref) + Detail of Center Block, 180T BOF"
+    },
+    {
+      "mark": "LC-1", "zone": "Lower Cone", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_rect",
+      "dimensions_mm": { "width": 150, "face_a": 146, "face_b": 143.6, "depth": 138.7 },
+      "note": "Role of each dimension (length/width/height) inferred from standard brick-drawing convention — verify against original sheet.",
+      "source": "Lower Cone Safety Bricks, 180T BOF"
+    },
+    {
+      "mark": "LC-2", "zone": "Lower Cone", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_rect",
+      "dimensions_mm": { "width": 150, "face_a": 148.8, "face_b": 144.7, "depth": 141.5 },
+      "note": "Role of each dimension inferred from convention — verify against original sheet.",
+      "source": "Lower Cone Safety Bricks, 180T BOF"
+    },
+    {
+      "mark": "LC-wedge-unconfirmed", "zone": "Lower Cone", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_wedge",
+      "dimensions_mm": { "a": 133.2, "b": 80.8, "c": 200, "d": 195, "taper_deg": 5 },
+      "note": "Two identical parallelogram shapes on the same sheet as LC-1/LC-2, but not individually mark-labeled — likely a filler/wedge piece, mark unconfirmed.",
+      "source": "Lower Cone Safety Bricks, 180T BOF"
+    },
+    {
+      "mark": "TM-1", "zone": "Top Cone", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_rect",
+      "dimensions_mm": { "width": 150, "face_a": 144, "face_b": 143.86, "depth": 138 },
+      "note": "Role of each dimension inferred from convention — verify against original sheet.",
+      "source": "Top Cone Safety Brick, 180T BOF"
+    },
+    {
+      "mark": "TM-2", "zone": "Top Cone", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_rect",
+      "dimensions_mm": { "width": 150, "face_a": 141, "face_b": 140.6, "depth": 131.5 },
+      "note": "Role of each dimension inferred from convention — verify against original sheet.",
+      "source": "Top Cone Safety Brick, 180T BOF"
+    },
+    {
+      "mark": "TM-wedge-unconfirmed", "zone": "Top Cone", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_wedge",
+      "dimensions_mm": { "a": 147.1, "b": 152.8, "c": 200, "d": 195, "taper_deg": 5 },
+      "note": "Two identical parallelogram shapes on the same sheet as TM-1/TM-2, not individually mark-labeled — mark unconfirmed.",
+      "source": "Top Cone Safety Brick, 180T BOF"
+    },
+    {
+      "mark": "100/20", "zone": "Lower Cone / Barrel", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 1000, "width_top": 160, "width_bottom": 140, "thickness": 100 },
+      "note": "Also used in Barrel Charge Pad zone as TRL HMR C5R (Type-4) — same shape, different quality grade by zone",
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (items 12, 15-17)"
+    },
+    { "mark": "100/80", "zone": "Lower Cone / Barrel", "quality_grade_internal": "TRL HMR C2R", "material_type": "Type-1",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 1000, "width_top": 190, "width_bottom": 110, "thickness": 100 },
+      "note": "Also used in Barrel Charge Pad zone as TRL HMR C5R (Type-4)",
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (items 12, 15-17)" },
+    { "mark": "95/20", "zone": "Barrel", "quality_grade_internal": "TRL HMR C2R / C4", "material_type": "Type-1 / Type-3",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 950, "width_top": 160, "width_bottom": 140, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (items 15-16, 18)" },
+    { "mark": "95/80", "zone": "Barrel", "quality_grade_internal": "TRL HMR C2R / C4", "material_type": "Type-1 / Type-3",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 950, "width_top": 190, "width_bottom": 110, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (items 15-16, 18)" },
+    { "mark": "90/8", "zone": "Barrel", "quality_grade_internal": "TRL HMR C3R / C4", "material_type": "Type-2 / Type-3",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 900, "width_top": 154, "width_bottom": 146, "thickness": 100 },
+      "note": "Used across Trunnion & Tap Pad (C3R) and Rest Area/Tap Pad for layers 64-65 (C4)",
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (items 16-19)" },
+    { "mark": "90/80", "zone": "Barrel", "quality_grade_internal": "TRL HMR C3R / C4", "material_type": "Type-2 / Type-3",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 900, "width_top": 190, "width_bottom": 110, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (items 16-19)" },
+    { "mark": "80/20", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4 / C3R", "material_type": "Type-3 / Type-2",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 800, "width_top": 160, "width_bottom": 140, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 21)" },
+    { "mark": "80/60", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4 / C3R", "material_type": "Type-3 / Type-2",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 800, "width_top": 180, "width_bottom": 120, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 21)" },
+    { "mark": "75/20", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4 / C3R", "material_type": "Type-3 / Type-2",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 750, "width_top": 160, "width_bottom": 140, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 22)" },
+    { "mark": "75/60", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4 / C3R", "material_type": "Type-3 / Type-2",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 750, "width_top": 180, "width_bottom": 120, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 22)" },
+    { "mark": "70/20", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4 / C3R", "material_type": "Type-3 / Type-2",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 700, "width_top": 160, "width_bottom": 140, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 23)" },
+    { "mark": "70/60", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4 / C3R", "material_type": "Type-3 / Type-2",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 700, "width_top": 180, "width_bottom": 120, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 23)" },
+    { "mark": "55/20", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4", "material_type": "Type-3",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 550, "width_top": 160, "width_bottom": 140, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 26)" },
+    { "mark": "55/80", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4", "material_type": "Type-3",
+      "shape_family": "standard_trapezoidal", "dimensions_mm": { "length": 550, "width_top": 190, "width_bottom": 110, "thickness": 100 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 26)" },
+    { "mark": "SCB-1A", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4", "material_type": "Type-3",
+      "shape_family": "steel_cladded", "dimensions_mm": { "length": 550, "width_top": 160, "width_bottom": 140, "thickness": 200 },
+      "note": "200mm thickness includes steel cladding", "source": "180MT BOF BOM sheet 1, Size(mm) column (item 27)" },
+    { "mark": "SCB-1B", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4", "material_type": "Type-3",
+      "shape_family": "steel_cladded", "dimensions_mm": { "length": 550, "width_top": 190, "width_bottom": 110, "thickness": 200 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 27)" },
+    { "mark": "SCB-2A", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4", "material_type": "Type-3",
+      "shape_family": "steel_cladded", "dimensions_mm": { "length": 450, "width_top": 160, "width_bottom": 140, "thickness": 200 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 28)" },
+    { "mark": "SCB-2B", "zone": "Top Cone", "quality_grade_internal": "TRL HMR C4", "material_type": "Type-3",
+      "shape_family": "steel_cladded", "dimensions_mm": { "length": 450, "width_top": 190, "width_bottom": 110, "thickness": 200 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 28)" },
+    { "mark": "Std", "zone": "Barrel", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_std", "dimensions_mm": { "length": 300, "width": 150, "thickness": 75 },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 20)" },
+    { "mark": "S/A", "zone": "Barrel", "quality_grade_internal": "TRL MC-4", "material_type": "Type-5",
+      "shape_family": "safety_lining_std", "dimensions_mm": { "length": 300, "width": 150, "thickness_range": "75/70" },
+      "source": "180MT BOF BOM sheet 1, Size(mm) column (item 20)" },
+    {
+      "mark": "TB-1", "zone": "Tap Hole (initial)", "quality_grade_internal": "M1611TB", "material_type": "Type-6",
+      "shape_family": "tap_hole_block",
+      "dimensions_mm": { "note": "Full diametral geometry per sheet; cross-check against original BOM: vol 46.04 dm3, unit wt 138.11 kg" },
+      "source": "Assembled Tap Hole Blocks, 180T BOF + BOM sheet 1 (item 32)"
+    },
+    {
+      "mark": "TB-2", "zone": "Tap Hole (initial)", "quality_grade_internal": "M1611TB", "material_type": "Type-6",
+      "shape_family": "tap_hole_block",
+      "dimensions_mm": { "note": "Full diametral geometry per sheet; cross-check against original BOM: vol 30.66 dm3, unit wt 91.98 kg" },
+      "source": "Assembled Tap Hole Blocks, 180T BOF + BOM sheet 1 (item 32)"
+    },
+    {
+      "mark": "TB-3", "zone": "Tap Hole (initial)", "quality_grade_internal": "M1611TB", "material_type": "Type-6",
+      "shape_family": "tap_hole_block",
+      "dimensions_mm": { "note": "Full diametral geometry per sheet; cross-check against original BOM: vol 29.59 dm3, unit wt 88.78 kg" },
+      "source": "Assembled Tap Hole Blocks, 180T BOF + BOM sheet 1 (item 32)"
+    },
+    {
+      "mark": "TB-4", "zone": "Tap Hole (initial)", "quality_grade_internal": "M1611TB", "material_type": "Type-6",
+      "shape_family": "tap_hole_block",
+      "dimensions_mm": { "note": "Full diametral geometry per sheet; cross-check against original BOM: vol 31.33 dm3, unit wt 93.98 kg" },
+      "source": "Assembled Tap Hole Blocks, 180T BOF + BOM sheet 1 (item 32)"
+    },
+    {
+      "mark": "TB-5", "zone": "Tap Hole (initial)", "quality_grade_internal": "M1611TB", "material_type": "Type-6",
+      "shape_family": "tap_hole_block",
+      "dimensions_mm": { "note": "Full diametral geometry per sheet; cross-check against original BOM: vol 20.60 dm3, unit wt 61.79 kg" },
+      "source": "Assembled Tap Hole Blocks, 180T BOF + BOM sheet 1 (item 32)"
+    },
+    {
+      "mark": "TS-1", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "shape_family": "tap_hole_sleeve",
+      "dimensions_mm": { "note": "Full diametral geometry per sheet; cross-check against original BOM: vol 9.09 dm3, unit wt 27.35 kg" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF + BOM sheet 1 (item 33)"
+    },
+    {
+      "mark": "TS-2", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "cross-check: vol 10.53 dm3, unit wt 31.70 kg" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF + BOM sheet 1 (item 33)"
+    },
+    {
+      "mark": "TS-3", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "cross-check: vol 13.27 dm3, unit wt 39.94 kg" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF + BOM sheet 1 (item 33)"
+    },
+    {
+      "mark": "TS-4", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "cross-check: vol 19.69 dm3, unit wt 59.27 kg" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF + BOM sheet 1 (item 33)"
+    },
+    {
+      "mark": "TS-5", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "cross-check: vol 20.11 dm3, unit wt 60.53 kg" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF + BOM sheet 1 (item 33)"
+    },
+    {
+      "mark": "TS-6", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "cross-check: vol 25.95 dm3, unit wt 78.11 kg" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF + BOM sheet 1 (item 33)"
+    },
+    {
+      "mark": "TS-7", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "Shown on shape sheet but NOT present in original BOM sheet 1 (which only listed TS-1 to TS-6) — new mark, quantity/weight unconfirmed" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF (shape sheet only)"
+    },
+    {
+      "mark": "TS-8", "zone": "Tap Hole (initial)", "quality_grade_internal": "HU28GTS2", "material_type": "Type-7",
+      "dimensions_mm": { "note": "Shown on shape sheet but NOT present in original BOM sheet 1 — new mark, quantity/weight unconfirmed" },
+      "source": "Assembled Tap Hole Sleeves, 180T BOF (shape sheet only)"
+    },
+    {
+      "mark": "MHP", "zone": "Bottom", "quality_grade_internal": "M1811S1 / TRL MGD", "material_type": "Type-8",
+      "shape_family": "purging_plug",
+      "dimensions_mm": { "overall_height": 885, "top_section": "150 x 134", "pipe_count": 24, "pipe_od": 27.2, "pipe_id": 19.4 },
+      "note": "24-hole and 48-hole variants both exist per original BOM (vol 17.59 dm3, unit wt 50.66 kg each)",
+      "source": "MHP & MHP Seating Block Drawing, 180T BOF + BOM sheet 1 (item 2)"
+    },
+    {
+      "mark": "MHP Seating Block", "zone": "Bottom", "quality_grade_internal": "TRL MGD", "material_type": "Type-9",
+      "shape_family": "seating_block",
+      "dimensions_mm": { "outer_dia": 100, "inner_dia": 50, "height": 145 },
+      "note": "cross-check against original BOM: vol 0.85 dm3, unit wt 2.54 kg",
+      "source": "MHP & MHP Seating Block Drawing, 180T BOF + BOM sheet 1 (item 6)"
+    }
+  ],
+
+  "_known_gaps": [
+    {
+      "issue": "TSC-1A through TSC-8B (Lower Cone & Barrel working lining, 16 marks)",
+      "status": "volume known, linear shape unresolved",
+      "detail": "BOM gives volume only (e.g. TSC-1A: 5.01 dm3) with no length/width/thickness breakdown — these are the curved bottom-to-barrel transition bricks, not simple trapezoids, so a size string isn't how they're specified. Genuinely needs either the DWG geometry or the real shape library."
+    },
+    {
+      "issue": "TPZ-1 through TPZ-4 (Top Cone transition, 4 marks)",
+      "status": "volume known, linear shape unresolved",
+      "detail": "BOM gives volume only (e.g. TPZ-1: 11.39 dm3), marked 'TPZ Shaped' with no dimension breakdown — same issue as TSC, a curved transition shape."
+    },
+    {
+      "issue": "BSM-1 (Bottom safety lining, layers 9-10)",
+      "status": "volume known, linear shape unresolved",
+      "detail": "BOM gives volume only (5.95 dm3), size listed as 'Shaped Brick' with no breakdown."
+    },
+    {
+      "issue": "Support/cover pieces (MHP cover liner, charge-pad support bracket)",
+      "status": "geometry present, BOM mark association unconfirmed",
+      "detail": "Two 'for customer approval' sheets show curved cover-liner pieces (matching the R7450/R8350 bottom-dish radii) and a support bracket, but neither is tied to a specific BOM line item in what's been shared."
+    }
+  ]
+}
