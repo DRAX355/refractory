@@ -2542,3 +2542,1005 @@ TypeError: _segments_from_profile_points() got an unexpected keyword argument 'a
 2026-10-05 12:18:12.784 | INFO     | app.main:lifespan:40 — ============================================================
 2026-10-05 12:18:12.784 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
 2026-10-05 12:22:36.406 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 12:22:38.129 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 12:22:38.129 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 12:22:38.129 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 12:22:38.129 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 12:22:38.129 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 12:22:38.129 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 12:22:38.129 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 12:32:02.343 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 12:32:06.973 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 12:32:06.974 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 12:32:06.974 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 12:32:06.974 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 12:32:06.974 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 12:32:06.974 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 12:32:06.977 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 12:32:44.225 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 12:53:48.049 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 12:53:48.050 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 12:53:48.050 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 12:53:48.050 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 12:53:48.050 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 12:53:48.050 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 12:53:48.051 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 12:54:30.047 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 12:54:30.050 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=c7a9469b-eb8b-47fb-bd25-73785991d7bf, file=input drawing _ naked shell.pdf
+2026-10-05 12:54:30.053 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\c7a9469b-eb8b-47fb-bd25-73785991d7bf\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 12:54:30.055 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 12:54:30.056 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 12:54:30.289 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\c7a9469b-eb8b-47fb-bd25-73785991d7bf\input drawing _ naked shell.pdf
+2026-10-05 12:54:30.633 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 12:54:30.658 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 12:54:30.660 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=c7a9469b-eb8b-47fb-bd25-73785991d7bf, format=DrawingFormat.PDF, pages=1
+2026-10-05 12:54:30.661 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=c7a9469b-eb8b-47fb-bd25-73785991d7bf, format=DrawingFormat.PDF, pages=1
+2026-10-05 12:54:30.661 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 12:54:30.661 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 12:54:43.352 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 12:54:43.699 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 12:55:05.957 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 12:55:05.964 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 12:55:05.966 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 12:55:05.974 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 12:55:06.092 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 12:55:09.334 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:129 — [OCR] Full image — 9 unique text blocks extracted via DocTR
+2026-10-05 12:55:09.334 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:134 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 12:55:09.334 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 12:55:09.334 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 12:55:09.334 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 12:55:09.334 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 12:55:09.334 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 12:55:09.336 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 12:55:09.336 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 12:55:09.336 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 12:55:09.336 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 12:55:09.336 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:139 — [OCR] Complete — raw_lines=9, dimensions=6, vessel_type=unknown
+2026-10-05 12:55:09.340 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 12:55:09.857 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 370 edges overlapping with masks.
+2026-10-05 12:55:09.859 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 302 segments remaining
+2026-10-05 12:55:09.861 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 302 path segments
+2026-10-05 12:55:09.875 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 12:55:09.879 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 12:55:09.879 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:143 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-05 12:55:09.905 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-05 12:55:09.905 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-05 12:55:09.905 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:164 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-05 12:55:09.905 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:168 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-05 12:55:09.955 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-05 12:55:09.956 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:171 — [Part 2] Positioned dims: 0
+2026-10-05 12:55:09.956 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:178 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 12:55:10.327 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 12:55:48.114 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-05 12:55:48.206 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-05 12:55:48.206 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0747 px/mm
+2026-10-05 12:55:48.228 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-05 12:55:48.229 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-05 12:55:48.229 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-05 12:55:48.229 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-05 12:55:48.235 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 12:55:48.244 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:165 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 12:55:48.244 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:171 — [Assembler] OpenCV circle dia estimate: 58420.0mm
+2026-10-05 12:55:48.247 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:455 — [Assembler] Fallback: Replaced 7 CAD segments with 5 exact OCR segments (err=0.006).
+2026-10-05 12:55:48.247 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:267 — [Assembler] Profile from PDF paths: 5 segments
+2026-10-05 12:55:48.247 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:829 — [Assembler] Nozzles: 2
+2026-10-05 12:55:48.251 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.52, segments=5, method=pdf_paths
+2026-10-05 12:55:48.265 | INFO     | app.services.part2_extraction.extraction_service:_save_output:248 — [Part 2] Output saved: data\outputs\c7a9469b-eb8b-47fb-bd25-73785991d7bf\vessel_geometry.json
+2026-10-05 12:55:48.641 | INFO     | app.services.part2_extraction.extraction_service:_save_output:294 — [Part 2] Excel output saved: data\outputs\c7a9469b-eb8b-47fb-bd25-73785991d7bf\vessel_geometry.xlsx
+2026-10-05 12:55:48.644 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] Extraction complete — job_id=c7a9469b-eb8b-47fb-bd25-73785991d7bf, elapsed=77.98s, confidence=0.52, segments=5, method=pdf_paths
+2026-10-05 16:31:39.667 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 16:31:39.670 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 16:31:39.672 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 16:31:39.672 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 16:31:39.672 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 16:31:39.672 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 16:31:39.672 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 16:33:46.841 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 16:33:46.844 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=480b5d10-490a-4a2b-8d08-dc533cc7c254, file=input drawing _ naked shell.pdf
+2026-10-05 16:33:46.847 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\480b5d10-490a-4a2b-8d08-dc533cc7c254\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 16:33:46.849 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 16:33:46.850 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 16:33:47.305 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\480b5d10-490a-4a2b-8d08-dc533cc7c254\input drawing _ naked shell.pdf
+2026-10-05 16:33:47.576 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 16:33:47.604 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 16:33:47.605 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=480b5d10-490a-4a2b-8d08-dc533cc7c254, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:33:47.605 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=480b5d10-490a-4a2b-8d08-dc533cc7c254, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:33:47.606 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 16:33:47.606 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 16:34:06.151 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 16:34:06.539 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 16:34:29.891 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 16:34:29.891 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 16:34:29.904 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 16:34:30.471 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 16:34:37.363 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:75 — [Part 2] OCR failed: name 'Polygon' is not defined
+2026-10-05 16:34:37.370 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 16:34:37.819 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 816 path segments
+2026-10-05 16:34:37.843 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 197 pts, height=316.3mm, max_r=146.0mm
+2026-10-05 16:34:37.845 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 197 pts, h=316mm
+2026-10-05 16:34:37.845 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:143 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-05 16:34:37.882 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-05 16:34:37.883 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-05 16:34:37.883 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:164 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-05 16:34:37.883 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:168 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-05 16:34:37.922 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-05 16:34:37.922 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:171 — [Part 2] Positioned dims: 0
+2026-10-05 16:34:37.922 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:178 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 16:34:38.392 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 16:35:18.983 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-05 16:35:19.081 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-05 16:35:19.089 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-05 16:35:19.100 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-05 16:35:19.101 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-05 16:35:19.101 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-05 16:35:19.106 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 16:35:19.120 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:267 — [Assembler] Profile from PDF paths: 8 segments
+2026-10-05 16:35:19.123 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:829 — [Assembler] Nozzles: 2
+2026-10-05 16:35:19.126 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.31, segments=8, method=pdf_paths
+2026-10-05 16:35:19.139 | INFO     | app.services.part2_extraction.extraction_service:_save_output:248 — [Part 2] Output saved: data\outputs\480b5d10-490a-4a2b-8d08-dc533cc7c254\vessel_geometry.json
+2026-10-05 16:35:19.679 | INFO     | app.services.part2_extraction.extraction_service:_save_output:294 — [Part 2] Excel output saved: data\outputs\480b5d10-490a-4a2b-8d08-dc533cc7c254\vessel_geometry.xlsx
+2026-10-05 16:35:19.679 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] Extraction complete — job_id=480b5d10-490a-4a2b-8d08-dc533cc7c254, elapsed=92.07s, confidence=0.31, segments=8, method=pdf_paths
+2026-10-05 16:36:10.899 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 16:36:10.899 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 16:36:10.900 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 16:36:10.900 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 16:36:10.900 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 16:36:10.900 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 16:36:10.900 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 16:37:09.233 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 16:37:09.234 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=0d134784-ebe0-4dfd-adba-d787cf34a38c, file=input drawing _ naked shell.pdf
+2026-10-05 16:37:09.235 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\0d134784-ebe0-4dfd-adba-d787cf34a38c\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 16:37:09.237 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 16:37:09.237 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 16:37:09.408 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\0d134784-ebe0-4dfd-adba-d787cf34a38c\input drawing _ naked shell.pdf
+2026-10-05 16:37:09.654 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 16:37:09.678 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 16:37:09.678 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=0d134784-ebe0-4dfd-adba-d787cf34a38c, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:37:09.678 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=0d134784-ebe0-4dfd-adba-d787cf34a38c, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:37:09.678 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 16:37:09.678 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 16:37:22.245 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 16:37:22.511 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 16:37:49.768 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 16:37:49.772 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 16:37:49.773 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 16:37:49.773 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 16:37:49.773 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 16:37:49.773 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 16:37:49.773 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 16:37:49.773 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 16:37:49.774 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 16:37:49.782 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 16:37:49.922 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 16:37:55.526 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 16:37:55.526 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 16:37:55.528 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 16:37:55.528 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 16:37:55.528 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 16:37:55.528 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 16:37:55.528 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 16:37:55.528 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 16:37:55.528 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 16:37:55.529 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 16:37:55.529 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 16:37:55.529 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 16:37:55.529 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 16:37:55.529 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 16:37:55.529 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 16:37:55.530 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 16:37:55.530 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 16:37:55.530 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 16:37:55.530 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 16:37:55.530 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 16:37:55.530 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 16:37:55.530 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 16:37:55.537 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 16:37:56.185 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 16:37:56.186 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 16:37:56.186 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 16:37:56.202 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 16:37:56.207 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 16:37:56.207 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:143 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-05 16:37:56.245 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-05 16:37:56.246 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-05 16:37:56.246 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:164 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-05 16:37:56.246 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:168 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-05 16:37:56.286 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-05 16:37:56.287 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:171 — [Part 2] Positioned dims: 0
+2026-10-05 16:37:56.287 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:178 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 16:37:56.723 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 16:38:39.701 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-05 16:38:39.801 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-05 16:38:39.801 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0747 px/mm
+2026-10-05 16:38:39.822 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-05 16:38:39.822 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-05 16:38:39.825 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-05 16:38:39.825 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-05 16:38:39.831 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 16:38:39.841 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:151 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 16:38:39.841 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:159 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 16:38:39.841 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:165 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 16:38:39.843 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:455 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-05 16:38:39.844 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:267 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-05 16:38:39.845 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:829 — [Assembler] Nozzles: 2
+2026-10-05 16:38:39.846 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-05 16:38:39.862 | INFO     | app.services.part2_extraction.extraction_service:_save_output:248 — [Part 2] Output saved: data\outputs\0d134784-ebe0-4dfd-adba-d787cf34a38c\vessel_geometry.json
+2026-10-05 16:38:40.381 | INFO     | app.services.part2_extraction.extraction_service:_save_output:294 — [Part 2] Excel output saved: data\outputs\0d134784-ebe0-4dfd-adba-d787cf34a38c\vessel_geometry.xlsx
+2026-10-05 16:38:40.383 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] Extraction complete — job_id=0d134784-ebe0-4dfd-adba-d787cf34a38c, elapsed=90.70s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-05 16:42:58.569 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 16:42:58.571 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 16:42:58.571 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 16:42:58.571 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 16:42:58.571 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 16:42:58.571 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 16:42:58.571 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 16:43:32.992 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 16:43:32.992 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=b13afeaf-c848-437f-a5eb-1101ea3a1aaa, file=input drawing _ naked shell.pdf
+2026-10-05 16:43:32.996 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\b13afeaf-c848-437f-a5eb-1101ea3a1aaa\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 16:43:32.996 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 16:43:32.996 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 16:43:33.164 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\b13afeaf-c848-437f-a5eb-1101ea3a1aaa\input drawing _ naked shell.pdf
+2026-10-05 16:43:33.406 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 16:43:33.425 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 16:43:33.425 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=b13afeaf-c848-437f-a5eb-1101ea3a1aaa, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:43:33.425 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=b13afeaf-c848-437f-a5eb-1101ea3a1aaa, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:43:33.425 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 16:43:33.425 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 16:43:44.819 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 16:43:45.136 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 16:44:14.170 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 16:44:14.185 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 16:44:14.185 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 16:44:14.197 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 16:44:14.309 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 16:44:18.899 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 16:44:18.899 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 16:44:18.899 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 16:44:18.899 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 16:44:18.899 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 16:44:18.899 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 16:44:18.899 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 16:44:18.899 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 16:44:18.899 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 16:44:18.901 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 16:44:18.901 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 16:44:18.901 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 16:44:18.901 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 16:44:18.901 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 16:44:18.901 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 16:44:18.901 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 16:44:18.901 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 16:44:18.903 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 16:44:18.903 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 16:44:18.903 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 16:44:18.903 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 16:44:18.903 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 16:44:18.909 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 16:44:19.471 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 16:44:19.473 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 16:44:19.473 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 16:44:19.490 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 16:44:19.490 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 16:44:19.490 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:143 — [Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…
+2026-10-05 16:44:19.528 | DEBUG    | app.utils.pdf_text_extractor:extract_pdf_text:59 — [PDF-Text] Page 1: 0 words extracted
+2026-10-05 16:44:19.528 | INFO     | app.utils.pdf_text_extractor:extract_pdf_text:84 — [PDF-Text] Extracted 0 unique text items from PDF
+2026-10-05 16:44:19.528 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:164 — [Part 2] pdfplumber found no text (rasterised PDF)
+2026-10-05 16:44:19.528 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:168 — [Part 2] Step 2c — PDF positioned dimension extraction…
+2026-10-05 16:44:19.569 | INFO     | app.utils.pdf_text_extractor:extract_segment_dimensions:180 — [PDF-Segments] Extracted 0 positioned dimensions
+2026-10-05 16:44:19.569 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:171 — [Part 2] Positioned dims: 0
+2026-10-05 16:44:19.569 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:178 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 16:44:19.961 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 16:44:57.856 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-05 16:44:57.950 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-05 16:44:57.950 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0747 px/mm
+2026-10-05 16:44:57.968 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-05 16:44:57.968 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-05 16:44:57.968 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-05 16:44:57.968 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-05 16:44:57.977 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:61 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 16:44:57.985 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:151 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 16:44:57.986 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:159 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 16:44:57.986 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:165 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 16:44:57.988 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:455 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-05 16:44:57.988 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:267 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-05 16:44:57.989 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:829 — [Assembler] Nozzles: 2
+2026-10-05 16:44:57.990 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:89 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-05 16:44:58.003 | INFO     | app.services.part2_extraction.extraction_service:_save_output:248 — [Part 2] Output saved: data\outputs\b13afeaf-c848-437f-a5eb-1101ea3a1aaa\vessel_geometry.json
+2026-10-05 16:44:58.314 | INFO     | app.services.part2_extraction.extraction_service:_save_output:294 — [Part 2] Excel output saved: data\outputs\b13afeaf-c848-437f-a5eb-1101ea3a1aaa\vessel_geometry.xlsx
+2026-10-05 16:44:58.326 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:209 — [Part 2] Extraction complete — job_id=b13afeaf-c848-437f-a5eb-1101ea3a1aaa, elapsed=84.89s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-05 16:55:55.393 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 16:59:00.093 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 16:59:00.095 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 16:59:00.095 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 16:59:00.096 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 16:59:00.096 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 16:59:00.096 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 16:59:00.096 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 16:59:56.036 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 16:59:56.037 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=f829c39d-8284-40d0-a9e0-c360fdfe6523, file=input drawing _ naked shell.pdf
+2026-10-05 16:59:56.040 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\f829c39d-8284-40d0-a9e0-c360fdfe6523\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 16:59:56.041 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 16:59:56.041 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 16:59:56.257 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\f829c39d-8284-40d0-a9e0-c360fdfe6523\input drawing _ naked shell.pdf
+2026-10-05 16:59:56.565 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 16:59:56.591 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 16:59:56.591 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=f829c39d-8284-40d0-a9e0-c360fdfe6523, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:59:56.591 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=f829c39d-8284-40d0-a9e0-c360fdfe6523, format=DrawingFormat.PDF, pages=1
+2026-10-05 16:59:56.591 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 16:59:56.591 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 17:00:10.311 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 17:00:10.552 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 17:00:31.065 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 17:00:31.071 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 17:00:31.071 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 17:00:31.071 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 17:00:31.073 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 17:00:31.073 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 17:00:31.073 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 17:00:31.073 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 17:00:31.073 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 17:00:31.082 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 17:00:31.195 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 17:00:35.927 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 17:00:35.927 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 17:00:35.927 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 17:00:35.927 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 17:00:35.927 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 17:00:35.929 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 17:00:35.929 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 17:00:35.929 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 17:00:35.929 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 17:00:35.929 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 17:00:35.929 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 17:00:35.929 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 17:00:35.931 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 17:00:35.931 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 17:00:35.931 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 17:00:35.931 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 17:00:35.931 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 17:00:35.931 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 17:00:35.931 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 17:00:35.933 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 17:00:35.933 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 17:00:35.933 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 17:00:35.937 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 17:00:36.517 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 17:00:36.517 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 17:00:36.517 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 17:00:36.532 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 17:00:36.532 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 17:00:36.532 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 17:00:36.931 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 17:01:15.399 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-05 17:01:15.495 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-05 17:01:15.495 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0747 px/mm
+2026-10-05 17:01:15.523 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-05 17:01:15.524 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-05 17:01:15.525 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-05 17:01:15.525 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-05 17:01:15.530 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:60 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 17:01:15.541 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 17:01:15.543 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:156 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 17:01:15.543 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:162 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 17:01:15.546 | ERROR    | app.api.v1.routes_extraction:process_drawing:97 — Extraction error
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+  File "C:\Program Files\Python311\Lib\multiprocessing\spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 380
+               │     └ 3
+               └ <function _main at 0x0000020FC03DE020>
+  File "C:\Program Files\Python311\Lib\multiprocessing\spawn.py", line 135, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 380
+           │    └ <function BaseProcess._bootstrap at 0x0000020FC00B3920>
+           └ <SpawnProcess name='SpawnProcess-4' parent=22348 started>
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x0000020FC00B2E80>
+    └ <SpawnProcess name='SpawnProcess-4' parent=22348 started>
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x0000020FC03B2350>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-4' parent=22348 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-4' parent=22348 started>
+    │    └ <function subprocess_started at 0x0000020FC2761D00>
+    └ <SpawnProcess name='SpawnProcess-4' parent=22348 started>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=564, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x0000020FC27B6910>>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=564, family=2, type=1, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x0000020FC2760AE0>
+           │       │   └ <uvicorn.server.Server object at 0x0000020FC27B6910>
+           │       └ <function run at 0x0000020FC2000860>
+           └ <module 'asyncio' from 'C:\\Program Files\\Python311\\Lib\\asyncio\\__init__.py'>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x0000020FC27855D0>
+           │      └ <function Runner.run at 0x0000020FC2004A40>
+           └ <asyncio.runners.Runner object at 0x0000020FC27B6350>
+  File "C:\Program Files\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\server.py...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000020FC2002660>
+           │    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000020FC27B6350>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x0000020FC20025C0>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000020FC2004400>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+  File "C:\Program Files\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000020FC1F46840>
+    └ <Handle <TaskStepMethWrapper object at 0x0000020FE53AC850>()>
+  File "C:\Program Files\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <TaskStepMethWrapper object at 0x0000020FE53AC850>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <TaskStepMethWrapper object at 0x0000020FE53AC850>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <TaskStepMethWrapper object at 0x0000020FE53AC850>()>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000020FC27DB090>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020FE5...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000020FE3510210>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000020FC27DB090>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020FE5...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020FE5...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000020FE379F950>
+          └ <fastapi.applications.FastAPI object at 0x0000020FE3510210>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000020FE530D760>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x0000020FE5361D90>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000020FE379F950>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '6288', 'sec-ch-ua-platform': '"Windows"', '...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000020FE530D760>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x0000020FC49DDDA0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000020FE5361D90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x0000020FE5361D90...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000020FC4B33F10>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000020FE5361D90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x0000020FE5361D90...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000020FE53C0250>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000020FC4AE2B90>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000020FC4B33F10>
+          └ <function wrap_app_handling_exceptions at 0x0000020FC491B100>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020FE5442DE0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x0000020FC4AE2B90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020FE5442DE0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000020FC4AE2B90>>
+          └ <fastapi.routing.APIRouter object at 0x0000020FC4AE2B90>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020FE5442DE0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x0000020FC49407C0>
+          └ APIRoute(path='/api/v1/extraction/process', name='process_drawing', methods=['POST'])
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020FE5442DE0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x0000020FE530D4E0>
+          └ APIRoute(path='/api/v1/extraction/process', name='process_drawing', methods=['POST'])
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020FE5442DE0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x0000020FC36561D0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000020FE5442F20>
+          └ <function wrap_app_handling_exceptions at 0x0000020FC491B100>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020FE53C80E0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000020FE5442F20>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x0000020FC36561D0>
+                     └ <function get_request_handler.<locals>.app at 0x0000020FE530D300>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000020FC49402C0>
+  File "D:\ZeroZeta\refractoryAI\venv\Lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'file': UploadFile(filename='input drawing _ naked shell.pdf', size=6078, headers=Headers({'content-disposition': 'form-data...
+                 │         └ <function process_drawing at 0x0000020FE330AE80>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+> File "D:\ZeroZeta\refractoryAI\app\api\v1\routes_extraction.py", line 95, in process_drawing
+    extraction_response = await extract_vessel_geometry(ingestion_result)
+                                │                       └ IngestionResult(job_id='f829c39d-8284-40d0-a9e0-c360fdfe6523', file_path=WindowsPath('data/outputs/f829c39d-8284-40d0-a9e0-c3...
+                                └ <function extract_vessel_geometry at 0x0000020FC4ACEC00>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part2_extraction\extraction_service.py", line 161, in extract_vessel_geometry
+    vessel_geometry = assemble_vessel_geometry(
+                      └ <function assemble_vessel_geometry at 0x0000020FE52DADE0>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part2_extraction\geometry_assembler.py", line 71, in assemble_vessel_geometry
+    geometry.shell = _assemble_shell(
+    │        │       └ <function _assemble_shell at 0x0000020FE530AB60>
+    │        └ VesselShellGeometry(outer_diameter_mm=None, inner_diameter_mm=None, total_length_mm=None, shell_thickness_mm=None, trunnion_d...
+    └ VesselGeometry(source_file='input drawing _ naked shell.pdf', source_format=<DrawingFormat.PDF: 'pdf'>, vessel_type=<VesselTy...
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part2_extraction\geometry_assembler.py", line 180, in _assemble_shell
+    shell.profile = _assemble_profile(
+    │     │         └ <function _assemble_profile at 0x0000020FE530BCE0>
+    │     └ VesselProfile(segments=[], total_height_mm=0.0, max_outer_radius_mm=0.0, extraction_method='estimated')
+    └ VesselShellGeometry(outer_diameter_mm=Dimension(value=7570.0, unit=<DimensionUnit.MM: 'mm'>, raw_text='07570', confidence=0.8...
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part2_extraction\geometry_assembler.py", line 245, in _assemble_profile
+    segs = _segments_from_profile_points(
+           └ <function _segments_from_profile_points at 0x0000020FE530BD80>
+
+  File "D:\ZeroZeta\refractoryAI\app\services\part2_extraction\geometry_assembler.py", line 382, in _segments_from_profile_points
+    if positioned_dims and segments and known_total_h:
+                           │            └ 10000.0
+                           └ [VesselSegment(index=0, segment_type=<SegmentType.CONE: 'cone'>, label='Taper / Shoulder', height_mm=1295.3, height_raw_text=...
+
+NameError: name 'positioned_dims' is not defined
+2026-10-05 17:03:58.392 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 17:04:01.961 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 17:04:01.961 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 17:04:01.961 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 17:04:01.961 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 17:04:01.961 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 17:04:01.964 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 17:04:01.964 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 17:05:11.022 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 17:05:11.024 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=2b95808f-8404-4027-9b9b-163ff0601288, file=input drawing _ naked shell.pdf
+2026-10-05 17:05:11.028 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\2b95808f-8404-4027-9b9b-163ff0601288\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 17:05:11.030 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 17:05:11.031 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 17:05:11.209 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\2b95808f-8404-4027-9b9b-163ff0601288\input drawing _ naked shell.pdf
+2026-10-05 17:05:11.563 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 17:05:11.585 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 17:05:11.585 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=2b95808f-8404-4027-9b9b-163ff0601288, format=DrawingFormat.PDF, pages=1
+2026-10-05 17:05:11.585 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=2b95808f-8404-4027-9b9b-163ff0601288, format=DrawingFormat.PDF, pages=1
+2026-10-05 17:05:11.585 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 17:05:11.591 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 17:05:24.286 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 17:05:24.609 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 17:05:52.902 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 17:05:52.911 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 17:05:52.911 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 17:05:52.911 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 17:05:52.914 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 17:05:52.914 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 17:05:52.914 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 17:05:52.914 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 17:05:52.914 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 17:05:52.924 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 17:05:53.084 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 17:05:59.268 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 17:05:59.268 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 17:05:59.268 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 17:05:59.268 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 17:05:59.268 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 17:05:59.268 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 17:05:59.268 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 17:05:59.268 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 17:05:59.268 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 17:05:59.270 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 17:05:59.270 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 17:05:59.270 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 17:05:59.270 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 17:05:59.270 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 17:05:59.270 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 17:05:59.270 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 17:05:59.272 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 17:05:59.272 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 17:05:59.272 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 17:05:59.272 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 17:05:59.272 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 17:05:59.272 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 17:05:59.280 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 17:06:00.060 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 17:06:00.060 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 17:06:00.060 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 17:06:00.076 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 17:06:00.076 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 17:06:00.083 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 17:06:00.603 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 17:06:40.625 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-05 17:06:40.717 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-05 17:06:40.717 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0747 px/mm
+2026-10-05 17:06:40.733 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-05 17:06:40.733 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-05 17:06:40.733 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-05 17:06:40.733 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-05 17:06:40.749 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:60 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 17:06:40.757 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 17:06:40.757 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:156 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 17:06:40.758 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:162 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 17:06:40.761 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:430 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-05 17:06:40.762 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:260 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-05 17:06:40.763 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:804 — [Assembler] Nozzles: 2
+2026-10-05 17:06:40.764 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:87 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-05 17:06:40.781 | INFO     | app.services.part2_extraction.extraction_service:_save_output:213 — [Part 2] Output saved: data\outputs\2b95808f-8404-4027-9b9b-163ff0601288\vessel_geometry.json
+2026-10-05 17:06:41.107 | INFO     | app.services.part2_extraction.extraction_service:_save_output:259 — [Part 2] Excel output saved: data\outputs\2b95808f-8404-4027-9b9b-163ff0601288\vessel_geometry.xlsx
+2026-10-05 17:06:41.107 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:174 — [Part 2] Extraction complete — job_id=2b95808f-8404-4027-9b9b-163ff0601288, elapsed=89.52s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-05 19:37:13.683 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 19:37:18.820 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 19:37:18.820 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 19:37:18.822 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 19:37:18.822 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 19:37:18.822 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 19:37:18.822 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 19:37:18.823 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 19:50:35.944 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 19:50:35.945 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=c0cdc197-3cf8-4d1d-a428-ca338442b83f, file=input drawing _ naked shell.pdf
+2026-10-05 19:50:35.953 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\c0cdc197-3cf8-4d1d-a428-ca338442b83f\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 19:50:35.990 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 19:50:35.996 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 19:50:36.244 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\c0cdc197-3cf8-4d1d-a428-ca338442b83f\input drawing _ naked shell.pdf
+2026-10-05 19:50:36.563 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 19:50:36.589 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 19:50:36.589 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=c0cdc197-3cf8-4d1d-a428-ca338442b83f, format=DrawingFormat.PDF, pages=1
+2026-10-05 19:50:36.589 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=c0cdc197-3cf8-4d1d-a428-ca338442b83f, format=DrawingFormat.PDF, pages=1
+2026-10-05 19:50:36.592 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 19:50:36.594 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 19:50:49.962 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 19:50:50.355 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 19:51:19.896 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 19:51:19.905 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 19:51:19.905 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 19:51:19.920 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 19:51:20.108 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 19:51:26.222 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 19:51:26.222 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 19:51:26.222 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 19:51:26.222 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 19:51:26.222 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 19:51:26.222 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 19:51:26.222 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 19:51:26.222 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 19:51:26.224 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 19:51:26.224 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 19:51:26.224 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 19:51:26.224 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 19:51:26.224 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 19:51:26.224 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 19:51:26.224 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 19:51:26.224 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 19:51:26.226 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 19:51:26.226 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 19:51:26.226 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 19:51:26.226 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 19:51:26.227 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 19:51:26.227 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 19:51:26.233 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 19:51:26.929 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 19:51:26.929 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 19:51:26.929 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 19:51:26.946 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 19:51:26.952 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 19:51:26.953 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 19:51:27.495 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 19:51:32.198 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:155 — [Part 2] OpenCV failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 60675362 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-05 19:51:32.224 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:60 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 19:51:32.230 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 19:51:32.230 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:156 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 19:51:32.230 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:162 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 19:51:32.245 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:430 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-05 19:51:32.245 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:260 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-05 19:51:32.245 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:804 — [Assembler] Nozzles: 2
+2026-10-05 19:51:32.245 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:87 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-05 19:51:32.264 | INFO     | app.services.part2_extraction.extraction_service:_save_output:213 — [Part 2] Output saved: data\outputs\c0cdc197-3cf8-4d1d-a428-ca338442b83f\vessel_geometry.json
+2026-10-05 19:51:32.886 | INFO     | app.services.part2_extraction.extraction_service:_save_output:272 — [Part 2] Excel output saved: data\outputs\c0cdc197-3cf8-4d1d-a428-ca338442b83f\vessel_geometry.xlsx
+2026-10-05 19:51:32.886 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:174 — [Part 2] Extraction complete — job_id=c0cdc197-3cf8-4d1d-a428-ca338442b83f, elapsed=56.30s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-05 19:55:36.719 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 19:55:40.732 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 19:55:40.732 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 19:55:40.732 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 19:55:40.732 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 19:55:40.732 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 19:55:40.732 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 19:55:40.732 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 20:01:48.564 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 20:02:15.052 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 20:02:15.052 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 20:02:15.052 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 20:02:15.059 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 20:02:15.059 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 20:02:15.060 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 20:02:15.060 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 20:02:26.670 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 20:02:26.672 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=761e13f2-2975-4403-8549-9f1f7da208ad, file=input drawing _ naked shell.pdf
+2026-10-05 20:02:26.674 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\761e13f2-2975-4403-8549-9f1f7da208ad\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 20:02:26.674 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 20:02:26.680 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 20:02:26.881 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\761e13f2-2975-4403-8549-9f1f7da208ad\input drawing _ naked shell.pdf
+2026-10-05 20:02:27.184 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 20:02:27.205 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 20:02:27.205 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=761e13f2-2975-4403-8549-9f1f7da208ad, format=DrawingFormat.PDF, pages=1
+2026-10-05 20:02:27.205 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=761e13f2-2975-4403-8549-9f1f7da208ad, format=DrawingFormat.PDF, pages=1
+2026-10-05 20:02:27.205 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 20:02:27.214 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 20:02:39.562 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 20:02:39.900 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 20:03:09.647 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 20:03:09.648 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 20:03:09.648 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 20:03:09.664 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 20:03:09.832 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 20:03:15.861 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 20:03:15.861 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 20:03:15.861 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 20:03:15.863 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 20:03:15.863 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 20:03:15.863 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 20:03:15.863 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 20:03:15.863 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 20:03:15.863 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 20:03:15.863 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 20:03:15.864 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 20:03:15.865 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 20:03:15.865 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 20:03:15.867 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 20:03:15.867 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 20:03:15.867 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 20:03:15.867 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 20:03:15.867 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 20:03:15.867 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 20:03:15.867 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 20:03:15.867 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 20:03:15.867 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 20:03:15.876 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 20:03:16.556 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 20:03:16.561 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 20:03:16.561 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 20:03:16.583 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 20:03:16.584 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 20:03:16.584 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 20:03:17.070 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 20:03:21.624 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:155 — [Part 2] OpenCV failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 60675362 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-05 20:03:21.666 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:60 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 20:03:21.680 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 20:03:21.680 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:156 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 20:03:21.680 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:162 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 20:03:21.683 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:430 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-05 20:03:21.686 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:260 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-05 20:03:21.686 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:804 — [Assembler] Nozzles: 2
+2026-10-05 20:03:21.686 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:87 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-05 20:03:21.710 | INFO     | app.services.part2_extraction.extraction_service:_save_output:216 — [Part 2] Output saved: data\outputs\761e13f2-2975-4403-8549-9f1f7da208ad\vessel_geometry.json
+2026-10-05 20:03:22.448 | INFO     | app.services.part2_extraction.extraction_service:_save_output:271 — [Part 2] Excel output saved: data\outputs\761e13f2-2975-4403-8549-9f1f7da208ad\vessel_geometry.xlsx
+2026-10-05 20:03:22.448 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:177 — [Part 2] Extraction complete — job_id=761e13f2-2975-4403-8549-9f1f7da208ad, elapsed=55.24s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-05 20:07:10.787 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 20:07:14.325 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 20:07:14.325 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 20:07:14.326 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 20:07:14.326 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 20:07:14.326 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 20:07:14.326 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 20:07:14.326 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 20:09:53.581 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
+2026-10-05 20:09:56.099 | INFO     | app.core.logging_config:setup_logging:43 — Logging initialised — level=INFO, env=development
+2026-10-05 20:09:56.099 | INFO     | app.main:lifespan:36 — ============================================================
+2026-10-05 20:09:56.099 | INFO     | app.main:lifespan:37 —   RefractoryAI API  v0.1.0
+2026-10-05 20:09:56.114 | INFO     | app.main:lifespan:38 —   Environment: development
+2026-10-05 20:09:56.114 | INFO     | app.main:lifespan:39 —   Device: cpu
+2026-10-05 20:09:56.114 | INFO     | app.main:lifespan:40 — ============================================================
+2026-10-05 20:09:56.114 | INFO     | app.main:lifespan:41 — Warming up Grounding DINO model on first request (lazy load)...
+2026-10-05 20:10:04.194 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-05 20:10:04.194 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=e602d484-7033-465c-8c3e-4fd2f05a0a1a, file=input drawing _ naked shell.pdf
+2026-10-05 20:10:04.201 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\e602d484-7033-465c-8c3e-4fd2f05a0a1a\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-05 20:10:04.202 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-05 20:10:04.202 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-05 20:10:04.399 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\e602d484-7033-465c-8c3e-4fd2f05a0a1a\input drawing _ naked shell.pdf
+2026-10-05 20:10:04.699 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-05 20:10:04.724 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-05 20:10:04.724 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=e602d484-7033-465c-8c3e-4fd2f05a0a1a, format=DrawingFormat.PDF, pages=1
+2026-10-05 20:10:04.724 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=e602d484-7033-465c-8c3e-4fd2f05a0a1a, format=DrawingFormat.PDF, pages=1
+2026-10-05 20:10:04.724 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-05 20:10:04.724 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:66 — [DINO] Loading model: IDEA-Research/grounding-dino-base on device=cpu
+2026-10-05 20:10:18.651 | INFO     | app.services.part2_extraction.dino_detector:_get_model_and_processor:86 — [DINO] Model loaded and ready.
+2026-10-05 20:10:18.959 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-05 20:10:47.870 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-05 20:10:47.874 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-05 20:10:47.874 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-05 20:10:47.880 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-05 20:10:47.880 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-05 20:10:47.880 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-05 20:10:47.880 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-05 20:10:47.880 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-05 20:10:47.880 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-05 20:10:47.891 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-05 20:10:48.044 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-05 20:10:54.451 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-05 20:10:54.451 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-05 20:10:54.453 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-05 20:10:54.453 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-05 20:10:54.453 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-05 20:10:54.453 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-05 20:10:54.453 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-05 20:10:54.453 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-05 20:10:54.453 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-05 20:10:54.455 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-05 20:10:54.455 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-05 20:10:54.455 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-05 20:10:54.455 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-05 20:10:54.455 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-05 20:10:54.455 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-05 20:10:54.455 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-05 20:10:54.455 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-05 20:10:54.457 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-05 20:10:54.457 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-05 20:10:54.458 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-05 20:10:54.458 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-05 20:10:54.458 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-05 20:10:54.465 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-05 20:10:55.368 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-05 20:10:55.371 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-05 20:10:55.371 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-05 20:10:55.399 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-05 20:10:55.402 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-05 20:10:55.403 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-05 20:10:56.008 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-05 20:10:59.583 | WARNING  | app.services.part2_extraction.extraction_service:extract_vessel_geometry:155 — [Part 2] OpenCV failed: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\alloc.cpp:73: error: (-4:Insufficient memory) Failed to allocate 60675362 bytes in function 'cv::OutOfMemoryError'
+
+2026-10-05 20:10:59.623 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:60 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-05 20:10:59.637 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-05 20:10:59.637 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:156 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-05 20:10:59.637 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:162 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-05 20:10:59.639 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:430 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-05 20:10:59.643 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:260 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-05 20:10:59.645 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:804 — [Assembler] Nozzles: 2
+2026-10-05 20:10:59.646 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:87 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-05 20:10:59.666 | INFO     | app.services.part2_extraction.extraction_service:_save_output:216 — [Part 2] Output saved: data\outputs\e602d484-7033-465c-8c3e-4fd2f05a0a1a\vessel_geometry.json
+2026-10-05 20:11:00.525 | INFO     | app.services.part2_extraction.extraction_service:_save_output:281 — [Part 2] Excel output saved: data\outputs\e602d484-7033-465c-8c3e-4fd2f05a0a1a\vessel_geometry.xlsx
+2026-10-05 20:11:00.533 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:177 — [Part 2] Extraction complete — job_id=e602d484-7033-465c-8c3e-4fd2f05a0a1a, elapsed=55.81s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-06 09:39:25.948 | INFO     | app.api.v1.routes_extraction:process_drawing:60 — [API] Full process request — file=input drawing _ naked shell.pdf
+2026-10-06 09:39:25.972 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:82 — [Part 1] Starting ingestion — job_id=7440d26d-7727-4994-9f36-fa660d292a38, file=input drawing _ naked shell.pdf
+2026-10-06 09:39:25.986 | DEBUG    | app.services.part1_ingestion.ingestion_service:ingest_drawing:93 — [Part 1] Saved to data\outputs\7440d26d-7727-4994-9f36-fa660d292a38\input drawing _ naked shell.pdf (6078 bytes)
+2026-10-06 09:39:25.994 | INFO     | app.services.part1_ingestion.drawing_validator:validate_upload:49 — Validation passed for 'input drawing _ naked shell.pdf'
+2026-10-06 09:39:25.998 | INFO     | app.services.part1_ingestion.file_handler:detect_format:49 — Detected format: DrawingFormat.PDF for file: input drawing _ naked shell.pdf
+2026-10-06 09:39:26.000 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:101 — Loading PDF via PyMuPDF: data\outputs\7440d26d-7727-4994-9f36-fa660d292a38\input drawing _ naked shell.pdf
+2026-10-06 09:39:26.554 | DEBUG    | app.services.part1_ingestion.file_handler:_load_pdf:122 —   Page 1: shape=(9262, 6551, 3)
+2026-10-06 09:39:26.584 | INFO     | app.services.part1_ingestion.file_handler:load_drawing:86 — Loaded drawing 'input drawing _ naked shell.pdf' — format=DrawingFormat.PDF, pages=1
+2026-10-06 09:39:26.587 | INFO     | app.services.part1_ingestion.ingestion_service:ingest_drawing:117 — [Part 1] Ingestion complete — job_id=7440d26d-7727-4994-9f36-fa660d292a38, format=DrawingFormat.PDF, pages=1
+2026-10-06 09:39:26.587 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:54 — [Part 2] Starting extraction — job_id=7440d26d-7727-4994-9f36-fa660d292a38, format=DrawingFormat.PDF, pages=1
+2026-10-06 09:39:26.587 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:62 — [Part 2] Step 1 — Grounding DINO detection…
+2026-10-06 09:39:26.960 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:113 — [DINO] Running detection on image 6551x9262
+2026-10-06 09:39:59.103 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.328 at [1437,2396,5810,6289]
+2026-10-06 09:39:59.116 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'oxygen lance port' — conf=0.382 at [1057,2330,5844,6334]
+2026-10-06 09:39:59.118 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'port' — conf=0.262 at [1436,2385,5823,6292]
+2026-10-06 09:39:59.118 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.294 at [1621,2386,2431,2552]
+2026-10-06 09:39:59.120 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation view' — conf=0.284 at [43,48,6505,9199]
+2026-10-06 09:39:59.120 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'title block' — conf=0.263 at [3546,2401,3849,2539]
+2026-10-06 09:39:59.120 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'arrow annotation' — conf=0.307 at [4318,4939,4778,5133]
+2026-10-06 09:39:59.120 | DEBUG    | app.services.part2_extraction.dino_detector:detect_drawing_elements:151 — [DINO] Detected 'front elevation' — conf=0.266 at [1051,2320,5849,6348]
+2026-10-06 09:39:59.122 | INFO     | app.services.part2_extraction.dino_detector:detect_drawing_elements:156 — [DINO] Detection complete — 8 elements found (threshold=0.25)
+2026-10-06 09:39:59.134 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:71 — [Part 2] Step 2 — DocTR OCR extraction…
+2026-10-06 09:39:59.142 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:105 — [OCR] Running DocTR on full image...
+2026-10-06 09:40:02.968 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:154 — [OCR] Full image — 19 unique text blocks extracted via DocTR (including CCW rotated)
+2026-10-06 09:40:02.968 | DEBUG    | app.services.part2_extraction.ocr_extractor:run_ocr:159 — [OCR] Skipping regional DINO OCR, DocTR handles full image.
+2026-10-06 09:40:02.970 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '10000' → (10000.0, 'mm')
+2026-10-06 09:40:02.972 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '529.' → (529.0, 'mm')
+2026-10-06 09:40:02.972 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '1965.2' → (1965.2, 'mm')
+2026-10-06 09:40:02.972 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '4884.3' → (4884.3, 'mm')
+2026-10-06 09:40:02.972 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '2415.' → (2415.0, 'mm')
+2026-10-06 09:40:02.972 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '150' → (150.0, 'mm')
+2026-10-06 09:40:02.973 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'U'
+2026-10-06 09:40:02.975 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '-'
+2026-10-06 09:40:02.975 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'OT'
+2026-10-06 09:40:02.975 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '2E'
+2026-10-06 09:40:02.976 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '6' → (6.0, 'mm')
+2026-10-06 09:40:02.976 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: '@'
+2026-10-06 09:40:02.976 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'B'
+2026-10-06 09:40:02.976 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '140' → (140.0, 'mm')
+2026-10-06 09:40:02.976 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'E'
+2026-10-06 09:40:02.978 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'ool'
+2026-10-06 09:40:02.978 | WARNING  | app.utils.unit_parser:parse_dimension:77 — Could not parse dimension from: 'a'
+2026-10-06 09:40:02.978 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '05942' → (5942.0, 'mm')
+2026-10-06 09:40:02.978 | DEBUG    | app.utils.unit_parser:parse_dimension:72 — Parsed plain number (assumed mm): '07570' → (7570.0, 'mm')
+2026-10-06 09:40:02.979 | INFO     | app.services.part2_extraction.ocr_extractor:run_ocr:164 — [OCR] Complete — raw_lines=19, dimensions=10, vessel_type=unknown
+2026-10-06 09:40:02.985 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:122 — [Part 2] Step 0b — PDF vector path extraction…
+2026-10-06 09:40:03.300 | DEBUG    | app.services.part2_extraction.graph_engine.cad_graph:filter_by_masks:59 — [Graph] Removed 439 edges overlapping with masks.
+2026-10-06 09:40:03.304 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:128 — [PDF-Paths] Filtered with DocTR: 233 segments remaining
+2026-10-06 09:40:03.306 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:150 — [PDF-Paths] Found 233 path segments
+2026-10-06 09:40:03.323 | INFO     | app.utils.pdf_path_extractor:extract_pdf_path_profile:177 — [PDF-Paths] Profile extracted: 194 pts, height=309.9mm, max_r=147.3mm
+2026-10-06 09:40:03.324 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:129 — [Part 2] PDF path profile: 194 pts, h=310mm
+2026-10-06 09:40:03.326 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:144 — [Part 2] Step 3 — OpenCV geometry analysis…
+2026-10-06 09:40:03.791 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:117 — [OpenCV] Detected 286 line segments
+2026-10-06 09:40:49.097 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:121 — [OpenCV] Detected 340 circles
+2026-10-06 09:40:49.223 | DEBUG    | app.services.part2_extraction.opencv_processor:process_geometry:125 — [OpenCV] Detected 2 significant contours
+2026-10-06 09:40:49.230 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:141 — [OpenCV] Scale estimated from bounding rect: 0.0747 px/mm
+2026-10-06 09:40:49.274 | DEBUG    | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:383 — [OpenCV-Zones] Found 2 breakpoints at rows: [53, 735]
+2026-10-06 09:40:49.277 | INFO     | app.services.part2_extraction.opencv_processor:_detect_vessel_zones:427 — [OpenCV-Zones] Assembled 3 zones from 2 breakpoints
+2026-10-06 09:40:49.277 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:150 — [OpenCV] Detected 3 vessel zones from profile contour
+2026-10-06 09:40:49.277 | INFO     | app.services.part2_extraction.opencv_processor:process_geometry:155 — [OpenCV] Geometry processing complete.
+2026-10-06 09:40:49.289 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:60 — [Assembler] Assembling VesselGeometry from extraction results…
+2026-10-06 09:40:49.307 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:148 — [Assembler] Outer dia: 7570.0mm ('07570')
+2026-10-06 09:40:49.307 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:156 — [Assembler] Inner dia: 5942.0mm ('05942')
+2026-10-06 09:40:49.307 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_shell:162 — [Assembler] Total length: 10000.0mm ('10000')
+2026-10-06 09:40:49.321 | INFO     | app.services.part2_extraction.geometry_assembler:_segments_from_profile_points:430 — [Assembler] Fallback: Replaced 7 CAD segments with 6 exact OCR segments (err=0.005).
+2026-10-06 09:40:49.323 | INFO     | app.services.part2_extraction.geometry_assembler:_assemble_profile:260 — [Assembler] Profile from PDF paths: 6 segments
+2026-10-06 09:40:49.323 | DEBUG    | app.services.part2_extraction.geometry_assembler:_assemble_nozzles:804 — [Assembler] Nozzles: 2
+2026-10-06 09:40:49.323 | INFO     | app.services.part2_extraction.geometry_assembler:assemble_vessel_geometry:87 — [Assembler] Done — type=VesselType.UNKNOWN, conf=0.64, segments=6, method=pdf_paths
+2026-10-06 09:40:49.357 | INFO     | app.services.part2_extraction.extraction_service:_save_output:216 — [Part 2] Output saved: data\outputs\7440d26d-7727-4994-9f36-fa660d292a38\vessel_geometry.json
+2026-10-06 09:40:49.648 | INFO     | app.services.part2_extraction.extraction_service:_save_output:281 — [Part 2] Excel output saved: data\outputs\7440d26d-7727-4994-9f36-fa660d292a38\vessel_geometry.xlsx
+2026-10-06 09:40:49.648 | INFO     | app.services.part2_extraction.extraction_service:extract_vessel_geometry:177 — [Part 2] Extraction complete — job_id=7440d26d-7727-4994-9f36-fa660d292a38, elapsed=83.06s, confidence=0.64, segments=6, method=pdf_paths
+2026-10-06 09:44:17.249 | INFO     | app.main:lifespan:43 — RefractoryAI API shutting down.
