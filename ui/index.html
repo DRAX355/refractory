@@ -790,12 +790,13 @@ const BV = k => { const b = S.basis.find(x => x.key === k); return b ? b.value :
 function geo() {
   const hD = G('hDish'), hL = G('hLC'), hB = G('hBar'), hT = G('hTop'), hM = G('hMouth');
   const z1 = hD, z2 = z1 + hL, z3 = z2 + hB, z4 = z3 + hT, H = z4 + hM;
-  const rDT = G('dBottom') / 2, rB = G('dBarrel') / 2, rM = G('dMouth') / 2, R = G('rDishSphere'), p = G('plate');
+  const rDT = G('dBottom') / 2, rB = G('dBarrel') / 2, rM = G('dMouth') / 2, p = G('plate');
+  const R = hD > 0 ? (rDT * rDT + hD * hD) / (2 * hD) : 1000;
   const bLC = Math.atan((rB - rDT) / hL), bT = Math.atan((rB - rM) / hT);
   return { z1, z2, z3, z4, H, rDT, rB, rM, R, p, bLC, bT, hD, hL, hB, hT, hM };
 }
 function rShell(h, g = geo()) { // outside shell radius
-  if (h <= g.z1) return Math.sqrt(Math.max(0, g.R * g.R - (g.R - h) ** 2));
+  if (h <= g.z1) return Math.sqrt(Math.max(0, 2 * g.R * h - h * h));
   if (h <= g.z2) return g.rDT + (g.rB - g.rDT) * (h - g.z1) / g.hL;
   if (h <= g.z3) return g.rB;
   if (h <= g.z4) return g.rB + (g.rM - g.rB) * (h - g.z3) / g.hT;
@@ -1069,7 +1070,7 @@ function sideSVG(o = {}) {
   const zoneFor = (seg, h, side) => zoneAt(seg, h, side < 0 ? 0 : 180);
   // bottom dish
   const dz = zoneFor('dish', 1, -1); const tb = dz ? dz.t : 900;
-  const dishPts = (off) => { const pts = []; const R = g.R - off, rEdge = g.rDT * R / g.R; for (let i = 0; i <= 24; i++) { const r = rEdge * i / 24; const hh = g.R - Math.sqrt(Math.max(0, R * R - r * r)); pts.push([r, hh]); } return pts; };
+  const dishPts = (off) => { const pts = []; const R_in = g.R - off; for (let i = 0; i <= 24; i++) { const h = off + (g.z1 - off) * (i / 24); const r = Math.sqrt(Math.max(0, R_in * R_in - Math.pow(g.R - h, 2))); pts.push([r, h]); } return pts; };
   for (const side of [-1, 1]) {
     const outer = dishPts(g.p), mid = dishPts(g.p + tp), inner = dishPts(g.p + tp + tb);
     const poly = (a, b, fill, cls = '') => `<path d="M${a.map(p => `${X(p[0], side).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(' L')} L${b.slice().reverse().map(p => `${X(p[0], side).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(' L')}Z" fill="${fill}" stroke="var(--edge)" stroke-width=".4" ${cls}/>`;
@@ -1281,12 +1282,10 @@ function shellOnlySVG(hl) {
       let L = [], R = [];
       if (seg.segment_type === 'dome') {
          // Bottom dish (widest at top) - spherical cap
-         const rSphere = G_val('rDishSphere') || Math.max(rT, 1000);
+         const rSphere = seg.height_mm > 0 ? (rT * rT + seg.height_mm * seg.height_mm) / (2 * seg.height_mm) : 1000;
          for (let h = hStart; h <= hEnd; h += Math.max(1, seg.height_mm/10)) {
-             const dh = hEnd - h;
-             // Distance from sphere center to the chord (top of dome)
-             const dCenter = Math.sqrt(Math.max(0, rSphere*rSphere - rT*rT));
-             const r = Math.sqrt(Math.max(0, rSphere*rSphere - Math.pow(dCenter + dh, 2)));
+             const hh = h - hStart;
+             const r = Math.sqrt(Math.max(0, 2 * rSphere * hh - hh * hh));
              L.push(`${X(r, -1)},${Y(h)}`);
              R.unshift(`${X(r, 1)},${Y(h)}`);
          }
