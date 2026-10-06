@@ -50,7 +50,6 @@ def assemble_vessel_geometry(
     dino_detections: list[BoundingBox],
     source_file: str,
     source_format: DrawingFormat,
-    positioned_dims: list | None = None,
     dxf_profile=None,      # DXFProfile | None
     pdf_path_profile=None, # PDFPathProfile | None
 ) -> VesselGeometry:
@@ -72,7 +71,6 @@ def assemble_vessel_geometry(
     geometry.shell = _assemble_shell(
         ocr=ocr_result,
         opencv=opencv_result,
-        positioned_dims=positioned_dims or [],
         dxf_profile=dxf_profile,
         pdf_path_profile=pdf_path_profile,
     )
@@ -111,7 +109,6 @@ def _resolve_vessel_type(ocr: OCRResult) -> VesselType:
 def _assemble_shell(
     ocr: OCRResult,
     opencv: OpenCVGeometryResult,
-    positioned_dims: list,
     dxf_profile,
     pdf_path_profile,
 ) -> VesselShellGeometry:
@@ -183,15 +180,10 @@ def _assemble_shell(
     shell.profile = _assemble_profile(
         shell=shell,
         opencv=opencv,
-        positioned_dims=positioned_dims,
         dxf_profile=dxf_profile,
         pdf_path_profile=pdf_path_profile,
         ocr=ocr,
     )
-
-    if shell.outer_diameter_mm is None and shell.profile and shell.profile.max_outer_radius_mm:
-        val = shell.profile.max_outer_radius_mm * 2
-        shell.outer_diameter_mm = make_dimension_model(val, "mm", f"~{val} (Proportional)", confidence=0.5)
 
     return shell
 
@@ -201,16 +193,19 @@ def _looks_like_diameter(value_mm: float, unit: str, raw_text: str) -> bool:
     Return True if this dimension is explicitly marked as a diameter.
     Signals:
       - raw text starts with Ø/Phi/DIA
+      - raw text starts with '0' followed by digits (OCR misread of Ø)
     """
     import re
     if re.search(r"[Øø\u00d8\u03a6]|DIA", raw_text, re.IGNORECASE):
+        return True
+    # Catch OCR errors where 'Ø' is misread as '0'
+    if re.match(r"^0\d{3,}", raw_text):
         return True
     return False
 
 def _assemble_profile(
     shell: VesselShellGeometry,
     opencv: OpenCVGeometryResult,
-    positioned_dims: list,
     dxf_profile,
     pdf_path_profile,
     ocr: OCRResult = None,
@@ -231,7 +226,6 @@ def _assemble_profile(
             profile_points=dxf_profile.points,
             known_outer_r=outer_r,
             known_total_h=total_h,
-            positioned_dims=positioned_dims,
             ocr=ocr,
         )
         if segs:
@@ -252,7 +246,6 @@ def _assemble_profile(
             profile_points=pdf_path_profile.points,
             known_outer_r=outer_r,
             known_total_h=total_h,
-            positioned_dims=positioned_dims,
             ocr=ocr,
         )
         if segs:
@@ -325,7 +318,6 @@ def _segments_from_profile_points(
     profile_points: list,
     known_outer_r: float | None,
     known_total_h: float | None,
-    positioned_dims: list,
     ocr: OCRResult = None,
 ) -> list[VesselSegment]:
     """
@@ -387,24 +379,7 @@ def _segments_from_profile_points(
         ))
 
     # Match the explicit OCR numbers to the segments to remove 'hallucinated' / NTS generic values
-    if positioned_dims and segments and known_total_h:
-        # Sort dimensions by y position to match top-to-bottom layout
-        pdims_sorted = sorted([d for d in positioned_dims if d.value < known_total_h * 0.9], key=lambda d: d.y)
-        if len(pdims_sorted) == len(segments):
-            # Perfect 1:1 match between extracted text labels and detected geometry segments
-            # Assign top-to-bottom (assuming image Y is 0 at top)
-            for i, seg in enumerate(reversed(segments)):
-                seg.height_mm = pdims_sorted[i].value
-                seg.height_raw_text = str(pdims_sorted[i].value)
-        else:
-            # Fallback: Just snap segment heights to the closest text dimension if they are within 15% tolerance
-            for seg in segments:
-                for pdim in positioned_dims:
-                    if abs(seg.height_mm - pdim.value) / max(seg.height_mm, 1) < 0.15:
-                        seg.height_mm = pdim.value
-                        seg.height_raw_text = str(pdim.value)
-                        break
-    elif not positioned_dims and segments and known_total_h and ocr:
+    if segments and known_total_h and ocr:
         # Fallback: We have no position data, but we have parsed dimensions.
         # If the number of extracted lengths equals the number of segments, try applying them.
         all_dims = []

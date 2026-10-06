@@ -43,7 +43,7 @@ class PDFPathProfile:
     success: bool = False
 
 
-def extract_pdf_path_profile(pdf_path: str | Path) -> PDFPathProfile:
+def extract_pdf_path_profile(pdf_path: str | Path, text_polygons: list = None) -> PDFPathProfile:
     """
     Extract the vessel cross-section profile directly from PDF vector paths.
 
@@ -96,6 +96,36 @@ def extract_pdf_path_profile(pdf_path: str | Path) -> PDFPathProfile:
                             segments.append((x1, y1, x2, y2))
                 except (KeyError, TypeError):
                     pass
+                    
+            # Use CADGraph to filter out segments that intersect with text bounding boxes
+            if text_polygons:
+                from app.services.part2_extraction.graph_engine.cad_graph import CADGraph
+                from shapely.geometry import LineString, Polygon
+                from shapely.affinity import scale, translate
+                
+                # Convert text_polygons from Image pixels to PDF points
+                # file_handler.py renders with zoom = 5.5
+                ZOOM = 5.5
+                scaled_masks = []
+                for p in text_polygons:
+                    # In pdfplumber, y=0 is top and y increases downwards just like images.
+                    p_scaled = scale(p, xfact=1/ZOOM, yfact=1/ZOOM, origin=(0, 0))
+                    scaled_masks.append(p_scaled)
+                    
+                graph = CADGraph(tolerance=1.0) # 1pt = ~0.35mm
+                lines = [LineString([(x1, y1), (x2, y2)]) for (x1, y1, x2, y2) in segments]
+                graph.add_lines(lines)
+                
+                graph.filter_by_masks(scaled_masks)
+                
+                # Retrieve filtered segments
+                filtered_segments = []
+                for u, v, data in graph.graph.edges(data=True):
+                    line = data['linestring']
+                    coords = list(line.coords)
+                    filtered_segments.append((coords[0][0], coords[0][1], coords[1][0], coords[1][1]))
+                segments = filtered_segments
+                logger.info(f"[PDF-Paths] Filtered with DocTR: {len(segments)} segments remaining")
 
             for rect in (page.rects or []):
                 try:

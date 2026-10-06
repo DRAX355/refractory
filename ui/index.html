@@ -543,15 +543,15 @@
 
         <div class="panel-section">
           <div class="panel-title">Vessel Geometry</div>
-          <div class="m-card hl">
-            <div class="m-label">Outer Shell Diameter</div>
+          <div class="m-card hl" id="card-outer" style="display:none;">
+            <div class="m-label">Outer Diameter (Trunnion)</div>
             <div class="m-value" id="m-outer"><span class="m-dash">—</span></div>
           </div>
-          <div class="m-card">
-            <div class="m-label">Inner Working Diameter</div>
+          <div class="m-card" id="card-inner" style="display:none;">
+            <div class="m-label">Shell Diameter (Main Body)</div>
             <div class="m-value" id="m-inner"><span class="m-dash">—</span></div>
           </div>
-          <div class="m-card">
+          <div class="m-card" id="card-length" style="display:none;">
             <div class="m-label">Total Vessel Length</div>
             <div class="m-value" id="m-length"><span class="m-dash">—</span></div>
           </div>
@@ -642,27 +642,58 @@ function animStep(sid, bid, ms) {
 /* ─── Metrics ────────────────────────────────────────────────────────────── */
 function updatePanel(data) {
   const g=data.vessel_geometry, s=g.shell;
-  setM('m-outer', s.outer_diameter_mm, 'Ø','mm');
-  setM('m-inner', s.inner_diameter_mm, 'Ø','mm');
-  setM('m-length', s.total_length_mm, '','mm');
+  
+  // Outer Shell Diameter
+  const outerCard = document.getElementById('card-outer');
+  if (s.outer_diameter_mm && s.outer_diameter_mm.value) {
+    outerCard.style.display = 'block';
+    setM('m-outer', s.outer_diameter_mm, 'Ø','mm');
+  } else {
+    outerCard.style.display = 'none';
+  }
+
+  // Inner Working Diameter
+  const innerCard = document.getElementById('card-inner');
+  if (s.inner_diameter_mm && s.inner_diameter_mm.value) {
+    innerCard.style.display = 'block';
+    setM('m-inner', s.inner_diameter_mm, 'Ø','mm');
+  } else {
+    innerCard.style.display = 'none';
+  }
+
+  // Total Length
+  const lengthCard = document.getElementById('card-length');
+  if (s.total_length_mm && s.total_length_mm.value) {
+    lengthCard.style.display = 'block';
+    setM('m-length', s.total_length_mm, '','mm');
+  } else {
+    lengthCard.style.display = 'none';
+  }
   
   const segContainer = document.getElementById('m-segments-container');
   if (segContainer && s.profile && s.profile.segments && s.profile.segments.length > 0) {
-    segContainer.innerHTML = s.profile.segments.map((seg, i) => {
+    let html = `<div style="font-size:12px;color:var(--text-muted);margin:4px 0 8px 0;font-weight:500;">
+      Extraction Method: <span style="color:var(--zz-green);text-transform:uppercase;">${s.profile.extraction_method.replace('_',' ')}</span>
+    </div>`;
+    html += s.profile.segments.map((seg, i) => {
       const h = seg.height_mm ? seg.height_mm.toLocaleString(undefined,{maximumFractionDigits:2}) : '—';
+      const rawText = seg.height_raw_text ? `(Parsed from: '${seg.height_raw_text}')` : '';
       return `<div class="m-card">
-        <div class="m-label">Segment ${i+1} Height</div>
+        <div class="m-label">Segment ${i+1} (${seg.label}) ${rawText}</div>
         <div class="m-value">${h}<span class="unit"> mm</span></div>
       </div>`;
     }).join('');
+    segContainer.innerHTML = html;
   } else if (segContainer) {
     segContainer.innerHTML = '';
   }
 }
 function setM(id, dim, pfx, unit) {
   const el=document.getElementById(id);
-  if(dim?.value) el.innerHTML=`<span class="pfx">${pfx}</span>${dim.value.toLocaleString()}<span class="unit"> ${unit}</span>`;
-  else el.innerHTML='<span class="m-dash">—</span>';
+  if(dim?.value) {
+    const rawText = dim.raw_text ? `<div style="font-size:10px;color:var(--text-muted);margin-top:2px;font-weight:400;">(Parsed from: '${dim.raw_text}')</div>` : '';
+    el.innerHTML=`<span class="pfx">${pfx}</span>${dim.value.toLocaleString()}<span class="unit"> ${unit}</span>${rawText}`;
+  } else el.innerHTML='<span class="m-dash">—</span>';
 }
 
 /* ─── Three.js Init ──────────────────────────────────────────────────────── */
@@ -862,41 +893,19 @@ function buildVesselParametric(geo) {
     return pts;
   }
 
-  // Steel outer shell
-  var shellMesh = new THREE.Mesh(lathe(buildProfilePoints(1.0, 0)),
-    new THREE.MeshStandardMaterial({ color:0x5a6170, metalness:0.75, roughness:0.30, side:THREE.DoubleSide }));
-  shellMesh.castShadow = shellMesh.receiveShadow = true;
-  vesselGroup.add(shellMesh);
-
-  // Linings only if inner diameter was actually extracted
-  if (innerR && liningT > 0) {
-    vesselGroup.add(new THREE.Mesh(lathe(buildProfilePoints((outerR - liningT * 0.12) / outerR, 40)),
-      new THREE.MeshStandardMaterial({ color:0x8896a0, metalness:0.05, roughness:0.88, side:THREE.DoubleSide })));
-    vesselGroup.add(new THREE.Mesh(lathe(buildProfilePoints((innerR + liningT * 0.10) / outerR, 80)),
-      new THREE.MeshStandardMaterial({ color:0x00B87A, roughness:0.82, side:THREE.DoubleSide,
-        emissive:new THREE.Color(0x003322), emissiveIntensity:0.12 })));
-  } else {
-    vesselGroup.add(new THREE.Mesh(lathe(buildProfilePoints(0.97, 30)),
-      new THREE.MeshStandardMaterial({ color:0x00B87A, roughness:0.82, side:THREE.DoubleSide,
-        emissive:new THREE.Color(0x003322), emissiveIntensity:0.08, transparent:true, opacity:0.85 })));
-  }
-
-  // Per-segment zone frustums
-  var SEG_CLR = {
-    flat_bottom:0x374151, dome:0x1e5c42, cylinder:0x008A5C,
-    cone:0x005C3D, neck:0x003D28, transition:0x266e50, unknown:0x4b5563,
-  };
+  // Zone boundary rings at each segment transition
+  var PALETTE = [0x3B82F6, 0x10B981, 0xF59E0B, 0xEF4444, 0x8B5CF6, 0xEC4899, 0x14B8A6, 0xF97316];
   var yBase = 0;
   segments.forEach(function(seg, si) {
-    var color = SEG_CLR[seg.segment_type] !== undefined ? SEG_CLR[seg.segment_type] : 0x4b5563;
-    var sGeo  = new THREE.CylinderGeometry(seg.radius_top_mm, seg.radius_bottom_mm, seg.height_mm, 72, 1, true);
+    var color = PALETTE[si % PALETTE.length];
+    var sGeo  = new THREE.CylinderGeometry(seg.radius_top_mm, seg.radius_bottom_mm, seg.height_mm, 72, 1, false);
     var sMesh = new THREE.Mesh(sGeo, new THREE.MeshStandardMaterial({
-      color:color, roughness:0.76, side:THREE.DoubleSide,
-      emissive:new THREE.Color(color).multiplyScalar(0.12), emissiveIntensity:0.3,
-      transparent:true, opacity: seg.is_extracted ? 0.90 : 0.50,
+      color:color, roughness:0.4, metalness:0.2, side:THREE.DoubleSide
     }));
     sMesh.position.y = yBase + seg.height_mm / 2;
     sMesh.userData   = { segIndex:si, label:seg.label, type:seg.segment_type };
+    sMesh.castShadow = true;
+    sMesh.receiveShadow = true;
     vesselGroup.add(sMesh);
     yBase += seg.height_mm;
   });

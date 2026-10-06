@@ -31,7 +31,7 @@ from app.services.part2_extraction.dino_detector import detect_drawing_elements
 from app.services.part2_extraction.ocr_extractor import run_ocr, OCRResult, _classify_text
 from app.services.part2_extraction.opencv_processor import process_geometry
 from app.services.part2_extraction.geometry_assembler import assemble_vessel_geometry
-from app.utils.pdf_text_extractor import extract_pdf_text, extract_segment_dimensions
+
 from app.utils.unit_parser import parse_dimension, parse_capacity_tons
 
 
@@ -57,6 +57,24 @@ async def extract_vessel_geometry(
     )
 
     primary_image = ingestion_result.images[0]
+
+    # ── Step 1: Grounding DINO ─────────────────────────────────────────────────
+    logger.info("[Part 2] Step 1 — Grounding DINO detection…")
+    try:
+        dino_detections = detect_drawing_elements(primary_image)
+    except Exception as exc:
+        logger.warning(f"[Part 2] DINO detection failed: {exc}")
+        warnings.append(f"DINO detection skipped: {exc}")
+        dino_detections = []
+
+    # ── Step 2: DocTR OCR ──────────────────────────────────────────────────
+    logger.info("[Part 2] Step 2 — DocTR OCR extraction…")
+    try:
+        ocr_result = run_ocr(primary_image, dino_regions=dino_detections)
+    except Exception as exc:
+        logger.warning(f"[Part 2] OCR failed: {exc}")
+        warnings.append(f"OCR extraction skipped: {exc}")
+        ocr_result = OCRResult()
 
     # ── Step 0a: DXF direct geometry (highest priority for DXF files) ─────────
     if ingestion_result.format == DrawingFormat.DXF:
@@ -85,7 +103,7 @@ async def extract_vessel_geometry(
         # 2. Parametric DXF Profile (for VesselGeometry contract)
         try:
             from app.services.part2_extraction.dxf_geometry_extractor import extract_dxf_profile
-            dxf_profile = extract_dxf_profile(ingestion_result.file_path)
+            dxf_profile = extract_dxf_profile(ingestion_result.file_path, text_polygons=ocr_result.text_polygons)
             if dxf_profile.success:
                 logger.info(
                     f"[Part 2] DXF profile: {len(dxf_profile.points)} pts, "
@@ -106,7 +124,7 @@ async def extract_vessel_geometry(
         # 2. Parametric PDF Profile (for VesselGeometry contract)
         try:
             from app.utils.pdf_path_extractor import extract_pdf_path_profile
-            pdf_path_profile = extract_pdf_path_profile(ingestion_result.file_path)
+            pdf_path_profile = extract_pdf_path_profile(ingestion_result.file_path, text_polygons=ocr_result.text_polygons)
             if pdf_path_profile.success:
                 logger.info(
                     f"[Part 2] PDF path profile: {len(pdf_path_profile.points)} pts, "
@@ -120,59 +138,7 @@ async def extract_vessel_geometry(
         except Exception as exc:
             logger.warning(f"[Part 2] PDF path extraction failed: {exc}")
 
-    # ── Step 1: Grounding DINO ─────────────────────────────────────────────────
-    logger.info("[Part 2] Step 1 — Grounding DINO detection…")
-    try:
-        dino_detections = detect_drawing_elements(primary_image)
-    except Exception as exc:
-        logger.warning(f"[Part 2] DINO detection failed: {exc}")
-        warnings.append(f"DINO detection skipped: {exc}")
-        dino_detections = []
 
-    # ── Step 2: Tesseract OCR ──────────────────────────────────────────────────
-    logger.info("[Part 2] Step 2 — Tesseract OCR extraction…")
-    try:
-        ocr_result = run_ocr(primary_image, dino_regions=dino_detections)
-    except Exception as exc:
-        logger.warning(f"[Part 2] OCR failed: {exc}")
-        warnings.append(f"OCR extraction skipped: {exc}")
-        ocr_result = OCRResult()
-
-    # ── Step 2b & 2c: PDF embedded text + positioned dimensions ───────────────
-    if ingestion_result.format == DrawingFormat.PDF:
-        logger.info("[Part 2] Step 2b — PDF embedded text extraction (pdfplumber)…")
-        try:
-            pdf_texts = extract_pdf_text(ingestion_result.file_path)
-            if pdf_texts:
-                logger.info(f"[Part 2] pdfplumber: {len(pdf_texts)} text items")
-                existing = set(ocr_result.raw_texts)
-                for t in pdf_texts:
-                    if t not in existing:
-                        ocr_result.raw_texts.append(t)
-                        existing.add(t)
-                for t in pdf_texts:
-                    parsed = parse_dimension(t)
-                    if parsed and parsed not in ocr_result.parsed_dimensions:
-                        ocr_result.parsed_dimensions.append(parsed)
-                        ocr_result.dimension_strings.append(t)
-                    cap = parse_capacity_tons(t)
-                    if cap and not ocr_result.operating_conditions.vessel_capacity_tons:
-                        ocr_result.operating_conditions.vessel_capacity_tons = cap
-                    _classify_text(t, ocr_result)
-                warnings.append(f"PDF text: {len(pdf_texts)} items")
-            else:
-                logger.info("[Part 2] pdfplumber found no text (rasterised PDF)")
-        except Exception as exc:
-            logger.warning(f"[Part 2] PDF text extraction failed: {exc}")
-
-        logger.info("[Part 2] Step 2c — PDF positioned dimension extraction…")
-        try:
-            positioned_dims = extract_segment_dimensions(ingestion_result.file_path)
-            logger.info(f"[Part 2] Positioned dims: {len(positioned_dims)}")
-            if positioned_dims:
-                warnings.append(f"Positioned dims: {len(positioned_dims)} labels")
-        except Exception as exc:
-            logger.warning(f"[Part 2] Positioned dim extraction failed: {exc}")
 
     # ── Step 3: OpenCV geometry ────────────────────────────────────────────────
     logger.info("[Part 2] Step 3 — OpenCV geometry analysis…")
@@ -198,10 +164,12 @@ async def extract_vessel_geometry(
         dino_detections=dino_detections,
         source_file=ingestion_result.filename,
         source_format=ingestion_result.format,
-        positioned_dims=positioned_dims,
         dxf_profile=dxf_profile,
         pdf_path_profile=pdf_path_profile,
     )
+    
+    if pdf_path_profile and pdf_path_profile.success and pdf_path_profile.points:
+        vessel_geometry.extra_metadata["pdf_paths"] = pdf_path_profile.points
 
     _save_output(vessel_geometry, job_id)
 
@@ -278,11 +246,28 @@ def _save_output(geometry: VesselGeometry, job_id: str) -> None:
             "source_format": [geometry.source_format],
             "vessel_type": [geometry.vessel_type],
             "drawing_number": [geometry.drawing_number],
-            "total_height_mm": [geometry.shell.profile.total_height_mm],
-            "max_outer_radius_mm": [geometry.shell.profile.max_outer_radius_mm],
-            "extraction_confidence": [geometry.extraction_confidence]
+            "revision": [geometry.revision],
+            "outer_diameter_mm": [geometry.shell.outer_diameter_mm.value if geometry.shell.outer_diameter_mm else None],
+            "outer_diameter_raw_text": [geometry.shell.outer_diameter_mm.raw_text if geometry.shell.outer_diameter_mm else None],
+            "inner_diameter_mm": [geometry.shell.inner_diameter_mm.value if geometry.shell.inner_diameter_mm else None],
+            "inner_diameter_raw_text": [geometry.shell.inner_diameter_mm.raw_text if geometry.shell.inner_diameter_mm else None],
+            "total_length_mm": [geometry.shell.total_length_mm.value if geometry.shell.total_length_mm else None],
+            "total_length_raw_text": [geometry.shell.total_length_mm.raw_text if geometry.shell.total_length_mm else None],
+            "profile_total_height_mm": [geometry.shell.profile.total_height_mm],
+            "profile_max_outer_radius_mm": [geometry.shell.profile.max_outer_radius_mm],
+            "extraction_method": [geometry.shell.profile.extraction_method]
         }
+        
+        # Flatten segments directly into metadata for immediate visibility
+        for i, s in enumerate(geometry.shell.profile.segments):
+            meta_data[f"segment_{i+1}_label"] = [s.label]
+            meta_data[f"segment_{i+1}_height_mm"] = [s.height_mm]
+            meta_data[f"segment_{i+1}_raw_text"] = [s.height_raw_text]
+
         meta_df = pd.DataFrame(meta_data)
+        
+        pdf_paths = geometry.extra_metadata.get("pdf_paths")
+        pdf_paths_df = pd.DataFrame(pdf_paths, columns=["y", "r"]) if pdf_paths else pd.DataFrame()
         
         with pd.ExcelWriter(excel_path) as writer:
             meta_df.to_excel(writer, sheet_name="Metadata", index=False)
@@ -290,6 +275,8 @@ def _save_output(geometry: VesselGeometry, job_id: str) -> None:
                 segments_df.to_excel(writer, sheet_name="Segments", index=False)
             if not nozzles_df.empty:
                 nozzles_df.to_excel(writer, sheet_name="Nozzles", index=False)
+            if not pdf_paths_df.empty:
+                pdf_paths_df.to_excel(writer, sheet_name="PDF Paths", index=False)
                 
         logger.info(f"[Part 2] Excel output saved: {excel_path}")
     except ImportError:

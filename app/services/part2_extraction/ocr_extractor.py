@@ -87,6 +87,10 @@ class OCRResult:
         self.vessel_type_hint: str = ""
         self.operating_conditions: OperatingConditions = OperatingConditions()
         self.nozzle_labels: list[str] = []
+        
+        # New for DocTR-based spatial masking
+        from shapely.geometry import Polygon
+        self.text_polygons: list[Polygon] = []
 
 
 def run_ocr(
@@ -94,79 +98,65 @@ def run_ocr(
     dino_regions: list[BoundingBox] | None = None,
 ) -> OCRResult:
     """
-    Run full OCR pipeline on a drawing image.
-
-    Args:
-        image_bgr:     OpenCV BGR image.
-        dino_regions:  Optional DINO-detected regions to crop and OCR separately.
-
-    Returns:
-        OCRResult with all extracted text and parsed values.
+    Run full OCR pipeline on a drawing image using DocTR.
     """
-    _configure_tesseract()
     result = OCRResult()
-
-    # ── Full-image OCR (dynamically upscaled) ─────────────────────────────────
-    h, w = image_bgr.shape[:2]
-    # For large CAD PDFs (e.g. 9000x6000), 3x upscaling causes MemoryError.
-    # We only upscale if the image is small/low-DPI.
-    scale_factor = 1.0 if w > 5000 else (1.5 if w > 3000 else 3.0)
-    logger.debug(f"[OCR] Base image {w}x{h}, scaling by {scale_factor}x for OCR")
     
-    upscaled = scale_image(image_bgr, scale=scale_factor)
-    preprocessed = preprocess_for_ocr(upscaled)
-
-    logger.debug("[OCR] Running Tesseract on full image...")
-
-    # Pass 1 — sparse (catches scattered annotations & dimension strings)
-    full_text_sparse = pytesseract.image_to_string(
-        preprocessed, config=TESSERACT_CONFIG_SPARSE
-    )
-    # Pass 2 — numeric whitelist (catches dimension numbers missed by Pass 1)
-    # Use the original upscaled (not binarised) for better digit recognition
-    upscaled_gray = scale_image(
-        __import__('cv2').cvtColor(image_bgr, __import__('cv2').COLOR_BGR2GRAY),
-        scale=2.0
-    )
-    full_text_numeric = pytesseract.image_to_string(
-        upscaled_gray, config=TESSERACT_CONFIG_NUMERIC
-    )
-
-    # Pass 3 — Rotated numeric whitelist (catches vertical dimension text on the left/right axes)
-    rotated = __import__('cv2').rotate(upscaled_gray, __import__('cv2').ROTATE_90_CLOCKWISE)
-    full_text_rotated = pytesseract.image_to_string(
-        rotated, config=TESSERACT_CONFIG_NUMERIC
-    )
-
-    all_raw = full_text_sparse + "\n" + full_text_numeric + "\n" + full_text_rotated
-    lines = [ln.strip() for ln in all_raw.splitlines() if ln.strip()]
-    # Deduplicate while preserving order
-    seen: set[str] = set()
-    for ln in lines:
-        if ln not in seen:
-            seen.add(ln)
-            result.raw_texts.append(ln)
-    logger.debug(f"[OCR] Full image — {len(result.raw_texts)} unique text lines extracted")
+    logger.debug("[OCR] Running DocTR on full image...")
+    from app.services.part2_extraction.doctr_extractor import run_doctr_on_image
+    
+    # Downscale image if too large (DocTR is slow on 9000x9000)
+    h, w = image_bgr.shape[:2]
+    import cv2
+    img_for_doctr = image_bgr
+    scale = 1.0
+    if max(h, w) > 4000:
+        scale = 4000 / max(h, w)
+        img_for_doctr = cv2.resize(image_bgr, (int(w * scale), int(h * scale)))
+        
+    doctr_result = run_doctr_on_image(img_for_doctr)
+    
+    # 1. Add words from standard orientation
+    from shapely.affinity import scale as shapely_scale
+    for word in doctr_result.words:
+        poly = word.polygon
+        if scale != 1.0:
+            poly = shapely_scale(poly, xfact=1/scale, yfact=1/scale, origin=(0,0))
+            
+        result.text_polygons.append(poly)
+        result.raw_texts.append(word.value)
+        
+    # 2. Add words from 90-degree CCW rotated orientation (for vertical text like diameters)
+    img_rot = cv2.rotate(img_for_doctr, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    doctr_rot_result = run_doctr_on_image(img_rot)
+    
+    h_rot, w_rot = img_rot.shape[:2]
+    # Original (scaled) dimensions
+    orig_w, orig_h = img_for_doctr.shape[1], img_for_doctr.shape[0]
+    
+    for word in doctr_rot_result.words:
+        # Map polygon back to unrotated space
+        # Transformation: orig_x = orig_w - y_rot, orig_y = x_rot
+        mapped_coords = []
+        for (x_rot, y_rot) in word.polygon.exterior.coords:
+            orig_x = orig_w - y_rot
+            orig_y = x_rot
+            mapped_coords.append((orig_x, orig_y))
+            
+        from shapely.geometry import Polygon
+        poly = Polygon(mapped_coords)
+        if scale != 1.0:
+            poly = shapely_scale(poly, xfact=1/scale, yfact=1/scale, origin=(0,0))
+            
+        result.text_polygons.append(poly)
+        result.raw_texts.append(word.value)
+        
+    logger.debug(f"[OCR] Full image — {len(result.raw_texts)} unique text blocks extracted via DocTR (including CCW rotated)")
 
     # ── Region-specific OCR (DINO crops) ─────────────────────────────────────
+    # Not needed with DocTR since it natively detects all dense text globally.
     if dino_regions:
-        for bbox in dino_regions:
-            crop = crop_region(
-                image_bgr,
-                (int(bbox.x_min), int(bbox.y_min), int(bbox.x_max), int(bbox.y_max)),
-            )
-            if crop.size == 0:
-                continue
-            crop_up = scale_image(crop, scale=2.0)
-            crop_pre = preprocess_for_ocr(crop_up)
-            region_text = pytesseract.image_to_string(
-                crop_pre, config=TESSERACT_CONFIG_BLOCK
-            )
-            region_lines = [ln.strip() for ln in region_text.splitlines() if ln.strip()]
-            result.raw_texts.extend(region_lines)
-            logger.debug(
-                f"[OCR] Region '{bbox.label}' — {len(region_lines)} lines extracted"
-            )
+        logger.debug(f"[OCR] Skipping regional DINO OCR, DocTR handles full image.")
 
     # ── Parse extracted text ──────────────────────────────────────────────────
     _parse_all_texts(result)
