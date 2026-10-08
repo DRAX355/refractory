@@ -52,6 +52,7 @@ def assemble_vessel_geometry(
     source_format: DrawingFormat,
     dxf_profile=None,      # DXFProfile | None
     pdf_path_profile=None, # PDFPathProfile | None
+    positioned_dims: list = None,
 ) -> VesselGeometry:
     """
     Assemble a VesselGeometry from Part 2 extraction results.
@@ -73,6 +74,7 @@ def assemble_vessel_geometry(
         opencv=opencv_result,
         dxf_profile=dxf_profile,
         pdf_path_profile=pdf_path_profile,
+        positioned_dims=positioned_dims,
     )
 
     geometry.operating_conditions = ocr_result.operating_conditions
@@ -111,6 +113,7 @@ def _assemble_shell(
     opencv: OpenCVGeometryResult,
     dxf_profile,
     pdf_path_profile,
+    positioned_dims: list = None,
 ) -> VesselShellGeometry:
     shell = VesselShellGeometry()
 
@@ -183,6 +186,7 @@ def _assemble_shell(
         dxf_profile=dxf_profile,
         pdf_path_profile=pdf_path_profile,
         ocr=ocr,
+        positioned_dims=positioned_dims,
     )
 
     return shell
@@ -209,12 +213,14 @@ def _assemble_profile(
     dxf_profile,
     pdf_path_profile,
     ocr: OCRResult = None,
+    positioned_dims: list = None,
 ) -> VesselProfile:
     """
     Build VesselProfile from extracted data only.
     Priority: DXF > PDF paths > OpenCV zones + positioned dims > positioned dims alone
-    Returns empty profile if no usable data.
     """
+    if positioned_dims is None:
+        positioned_dims = []
     profile = VesselProfile()
 
     outer_r = shell.outer_diameter_mm.value / 2.0 if shell.outer_diameter_mm else None
@@ -737,7 +743,9 @@ def _classify_from_radii(r_bot: float, r_top: float, h_mm: float) -> SegmentType
     if h_mm < 5:
         return SegmentType.FLAT_BOTTOM
     if r_bot < 1e-3 or r_top < 1e-3:
-        return SegmentType.FLAT_BOTTOM
+        # If it has height but tapers to 0, it's a cone, not a flat plate
+        return SegmentType.CONE
+
     ratio = min(r_bot, r_top) / max(r_bot, r_top) if max(r_bot, r_top) > 0 else 1.0
     delta_r = abs(r_top - r_bot)
     slope_deg = math.degrees(math.atan2(delta_r, h_mm))

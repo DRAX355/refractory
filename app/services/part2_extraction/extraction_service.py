@@ -166,6 +166,7 @@ async def extract_vessel_geometry(
         source_format=ingestion_result.format,
         dxf_profile=dxf_profile,
         pdf_path_profile=pdf_path_profile,
+        positioned_dims=positioned_dims,
     )
     
     if pdf_path_profile and pdf_path_profile.success and pdf_path_profile.points:
